@@ -1,0 +1,590 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A80C2E2F27DE4EEB006892AA /* PointTrackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C2E2E27DE4EEB006892AA /* PointTrackApp.swift */; };
+		A80C2E3127DE4EEB006892AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C2E3027DE4EEB006892AA /* ContentView.swift */; };
+		A80C2E3327DE4EEC006892AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A80C2E3227DE4EEC006892AA /* Assets.xcassets */; };
+		A80C2E3627DE4EEC006892AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A80C2E3527DE4EEC006892AA /* Preview Assets.xcassets */; };
+		A80C2E4027DE4EEC006892AA /* PointTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C2E3F27DE4EEC006892AA /* PointTrackTests.swift */; };
+		A80C2E4A27DE4EEC006892AA /* PointTrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C2E4927DE4EEC006892AA /* PointTrackUITests.swift */; };
+		A80C2E4C27DE4EEC006892AA /* PointTrackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C2E4B27DE4EEC006892AA /* PointTrackUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A80C2E3C27DE4EEC006892AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A80C2E2327DE4EEB006892AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A80C2E2A27DE4EEB006892AA;
+			remoteInfo = PointTrack;
+		};
+		A80C2E4627DE4EEC006892AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A80C2E2327DE4EEB006892AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A80C2E2A27DE4EEB006892AA;
+			remoteInfo = PointTrack;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A80C2E2B27DE4EEB006892AA /* PointTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PointTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A80C2E2E27DE4EEB006892AA /* PointTrackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointTrackApp.swift; sourceTree = "<group>"; };
+		A80C2E3027DE4EEB006892AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A80C2E3227DE4EEC006892AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A80C2E3527DE4EEC006892AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A80C2E3B27DE4EEC006892AA /* PointTrackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PointTrackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A80C2E3F27DE4EEC006892AA /* PointTrackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointTrackTests.swift; sourceTree = "<group>"; };
+		A80C2E4527DE4EEC006892AA /* PointTrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PointTrackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A80C2E4927DE4EEC006892AA /* PointTrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointTrackUITests.swift; sourceTree = "<group>"; };
+		A80C2E4B27DE4EEC006892AA /* PointTrackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointTrackUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A80C2E2827DE4EEB006892AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A80C2E3827DE4EEC006892AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A80C2E4227DE4EEC006892AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A80C2E2227DE4EEB006892AA = {
+			isa = PBXGroup;
+			children = (
+				A80C2E2D27DE4EEB006892AA /* PointTrack */,
+				A80C2E3E27DE4EEC006892AA /* PointTrackTests */,
+				A80C2E4827DE4EEC006892AA /* PointTrackUITests */,
+				A80C2E2C27DE4EEB006892AA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A80C2E2C27DE4EEB006892AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A80C2E2B27DE4EEB006892AA /* PointTrack.app */,
+				A80C2E3B27DE4EEC006892AA /* PointTrackTests.xctest */,
+				A80C2E4527DE4EEC006892AA /* PointTrackUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A80C2E2D27DE4EEB006892AA /* PointTrack */ = {
+			isa = PBXGroup;
+			children = (
+				A80C2E2E27DE4EEB006892AA /* PointTrackApp.swift */,
+				A80C2E3027DE4EEB006892AA /* ContentView.swift */,
+				A80C2E3227DE4EEC006892AA /* Assets.xcassets */,
+				A80C2E3427DE4EEC006892AA /* Preview Content */,
+			);
+			path = PointTrack;
+			sourceTree = "<group>";
+		};
+		A80C2E3427DE4EEC006892AA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A80C2E3527DE4EEC006892AA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A80C2E3E27DE4EEC006892AA /* PointTrackTests */ = {
+			isa = PBXGroup;
+			children = (
+				A80C2E3F27DE4EEC006892AA /* PointTrackTests.swift */,
+			);
+			path = PointTrackTests;
+			sourceTree = "<group>";
+		};
+		A80C2E4827DE4EEC006892AA /* PointTrackUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A80C2E4927DE4EEC006892AA /* PointTrackUITests.swift */,
+				A80C2E4B27DE4EEC006892AA /* PointTrackUITestsLaunchTests.swift */,
+			);
+			path = PointTrackUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A80C2E2A27DE4EEB006892AA /* PointTrack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A80C2E4F27DE4EEC006892AA /* Build configuration list for PBXNativeTarget "PointTrack" */;
+			buildPhases = (
+				A80C2E2727DE4EEB006892AA /* Sources */,
+				A80C2E2827DE4EEB006892AA /* Frameworks */,
+				A80C2E2927DE4EEB006892AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PointTrack;
+			productName = PointTrack;
+			productReference = A80C2E2B27DE4EEB006892AA /* PointTrack.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A80C2E3A27DE4EEC006892AA /* PointTrackTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A80C2E5227DE4EEC006892AA /* Build configuration list for PBXNativeTarget "PointTrackTests" */;
+			buildPhases = (
+				A80C2E3727DE4EEC006892AA /* Sources */,
+				A80C2E3827DE4EEC006892AA /* Frameworks */,
+				A80C2E3927DE4EEC006892AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A80C2E3D27DE4EEC006892AA /* PBXTargetDependency */,
+			);
+			name = PointTrackTests;
+			productName = PointTrackTests;
+			productReference = A80C2E3B27DE4EEC006892AA /* PointTrackTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A80C2E4427DE4EEC006892AA /* PointTrackUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A80C2E5527DE4EEC006892AA /* Build configuration list for PBXNativeTarget "PointTrackUITests" */;
+			buildPhases = (
+				A80C2E4127DE4EEC006892AA /* Sources */,
+				A80C2E4227DE4EEC006892AA /* Frameworks */,
+				A80C2E4327DE4EEC006892AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A80C2E4727DE4EEC006892AA /* PBXTargetDependency */,
+			);
+			name = PointTrackUITests;
+			productName = PointTrackUITests;
+			productReference = A80C2E4527DE4EEC006892AA /* PointTrackUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A80C2E2327DE4EEB006892AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					A80C2E2A27DE4EEB006892AA = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					A80C2E3A27DE4EEC006892AA = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = A80C2E2A27DE4EEB006892AA;
+					};
+					A80C2E4427DE4EEC006892AA = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = A80C2E2A27DE4EEB006892AA;
+					};
+				};
+			};
+			buildConfigurationList = A80C2E2627DE4EEB006892AA /* Build configuration list for PBXProject "PointTrack" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A80C2E2227DE4EEB006892AA;
+			productRefGroup = A80C2E2C27DE4EEB006892AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A80C2E2A27DE4EEB006892AA /* PointTrack */,
+				A80C2E3A27DE4EEC006892AA /* PointTrackTests */,
+				A80C2E4427DE4EEC006892AA /* PointTrackUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A80C2E2927DE4EEB006892AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A80C2E3627DE4EEC006892AA /* Preview Assets.xcassets in Resources */,
+				A80C2E3327DE4EEC006892AA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A80C2E3927DE4EEC006892AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A80C2E4327DE4EEC006892AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A80C2E2727DE4EEB006892AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A80C2E3127DE4EEB006892AA /* ContentView.swift in Sources */,
+				A80C2E2F27DE4EEB006892AA /* PointTrackApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A80C2E3727DE4EEC006892AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A80C2E4027DE4EEC006892AA /* PointTrackTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A80C2E4127DE4EEC006892AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A80C2E4A27DE4EEC006892AA /* PointTrackUITests.swift in Sources */,
+				A80C2E4C27DE4EEC006892AA /* PointTrackUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A80C2E3D27DE4EEC006892AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A80C2E2A27DE4EEB006892AA /* PointTrack */;
+			targetProxy = A80C2E3C27DE4EEC006892AA /* PBXContainerItemProxy */;
+		};
+		A80C2E4727DE4EEC006892AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A80C2E2A27DE4EEB006892AA /* PointTrack */;
+			targetProxy = A80C2E4627DE4EEC006892AA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A80C2E4D27DE4EEC006892AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A80C2E4E27DE4EEC006892AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A80C2E5027DE4EEC006892AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PointTrack/Preview Content\"";
+				DEVELOPMENT_TEAM = HTYXN76T3Q;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.e-code.PointTrack";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A80C2E5127DE4EEC006892AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PointTrack/Preview Content\"";
+				DEVELOPMENT_TEAM = HTYXN76T3Q;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.e-code.PointTrack";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A80C2E5327DE4EEC006892AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HTYXN76T3Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.e-code.PointTrackTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PointTrack.app/PointTrack";
+			};
+			name = Debug;
+		};
+		A80C2E5427DE4EEC006892AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HTYXN76T3Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.e-code.PointTrackTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PointTrack.app/PointTrack";
+			};
+			name = Release;
+		};
+		A80C2E5627DE4EEC006892AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HTYXN76T3Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.e-code.PointTrackUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PointTrack;
+			};
+			name = Debug;
+		};
+		A80C2E5727DE4EEC006892AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HTYXN76T3Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.e-code.PointTrackUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PointTrack;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A80C2E2627DE4EEB006892AA /* Build configuration list for PBXProject "PointTrack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A80C2E4D27DE4EEC006892AA /* Debug */,
+				A80C2E4E27DE4EEC006892AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A80C2E4F27DE4EEC006892AA /* Build configuration list for PBXNativeTarget "PointTrack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A80C2E5027DE4EEC006892AA /* Debug */,
+				A80C2E5127DE4EEC006892AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A80C2E5227DE4EEC006892AA /* Build configuration list for PBXNativeTarget "PointTrackTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A80C2E5327DE4EEC006892AA /* Debug */,
+				A80C2E5427DE4EEC006892AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A80C2E5527DE4EEC006892AA /* Build configuration list for PBXNativeTarget "PointTrackUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A80C2E5627DE4EEC006892AA /* Debug */,
+				A80C2E5727DE4EEC006892AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A80C2E2327DE4EEB006892AA /* Project object */;
+}
