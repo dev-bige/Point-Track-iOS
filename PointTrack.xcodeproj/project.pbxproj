@@ -14,6 +14,9 @@
 		A80C2E4027DE4EEC006892AA /* PointTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C2E3F27DE4EEC006892AA /* PointTrackTests.swift */; };
 		A80C2E4A27DE4EEC006892AA /* PointTrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C2E4927DE4EEC006892AA /* PointTrackUITests.swift */; };
 		A80C2E4C27DE4EEC006892AA /* PointTrackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C2E4B27DE4EEC006892AA /* PointTrackUITestsLaunchTests.swift */; };
+		A8859A3A27DE518C0067436A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8859A3927DE518C0067436A /* LoginView.swift */; };
+		A8859A3C27DED11F0067436A /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8859A3B27DED11F0067436A /* SignUpView.swift */; };
+		A8859A3E27DED13B0067436A /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8859A3D27DED13B0067436A /* ForgotPasswordView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		A80C2E4527DE4EEC006892AA /* PointTrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PointTrackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A80C2E4927DE4EEC006892AA /* PointTrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointTrackUITests.swift; sourceTree = "<group>"; };
 		A80C2E4B27DE4EEC006892AA /* PointTrackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointTrackUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A8859A3927DE518C0067436A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A8859A3B27DED11F0067436A /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		A8859A3D27DED13B0067436A /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,9 @@
 		A80C2E2D27DE4EEB006892AA /* PointTrack */ = {
 			isa = PBXGroup;
 			children = (
+				A8859A3827DE51750067436A /* Views */,
+				A8859A3727DE516D0067436A /* Models */,
+				A8859A3627DE51660067436A /* Resources */,
 				A80C2E2E27DE4EEB006892AA /* PointTrackApp.swift */,
 				A80C2E3027DE4EEB006892AA /* ContentView.swift */,
 				A80C2E3227DE4EEC006892AA /* Assets.xcassets */,
@@ -125,6 +134,30 @@
 				A80C2E4B27DE4EEC006892AA /* PointTrackUITestsLaunchTests.swift */,
 			);
 			path = PointTrackUITests;
+			sourceTree = "<group>";
+		};
+		A8859A3627DE51660067436A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A8859A3727DE516D0067436A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A8859A3827DE51750067436A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A8859A3927DE518C0067436A /* LoginView.swift */,
+				A8859A3B27DED11F0067436A /* SignUpView.swift */,
+				A8859A3D27DED13B0067436A /* ForgotPasswordView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +290,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8859A3C27DED11F0067436A /* SignUpView.swift in Sources */,
+				A8859A3A27DE518C0067436A /* LoginView.swift in Sources */,
 				A80C2E3127DE4EEB006892AA /* ContentView.swift in Sources */,
+				A8859A3E27DED13B0067436A /* ForgotPasswordView.swift in Sources */,
 				A80C2E2F27DE4EEB006892AA /* PointTrackApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +463,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -456,6 +493,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
