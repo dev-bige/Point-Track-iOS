@@ -59,6 +59,7 @@ struct LoginView: View {
                 }.foregroundColor(Color.black)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color("BackgroundColor"))
         }
     }
     
