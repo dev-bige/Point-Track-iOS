@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ForgotPasswordView: View {
     @State private var email: String = ""
+    @State private var forgotPasswordResetStatus: String = ""
     
     var body: some View {
         VStack {
@@ -35,13 +36,24 @@ struct ForgotPasswordView: View {
             }
                 .buttonStyle(.bordered)
                 .background(Color("MainColor"))
+            
+            Text(self.forgotPasswordResetStatus)
+                .foregroundColor(.red)
+                .padding()
+                .multilineTextAlignment(.center)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("BackgroundColor"))
     }
     
     private func resetPassword() {
-        
+        FirebaseManager.shared.auth.sendPasswordReset(withEmail: email) { error in
+            if let error = error {
+                print("Failed to reset email:", error)
+                self.forgotPasswordResetStatus = error.localizedDescription
+                return
+            }
+        }
     }
 }
 

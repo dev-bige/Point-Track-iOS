@@ -15,6 +15,8 @@
 		A8018F2327E189F500C80BFF /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A8018F2227E189F500C80BFF /* FirebaseFirestore */; };
 		A8018F2527E189F500C80BFF /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = A8018F2427E189F500C80BFF /* FirebaseFunctions */; };
 		A8018F2727E189F500C80BFF /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A8018F2627E189F500C80BFF /* FirebaseStorage */; };
+		A8018F2927E2C77200C80BFF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8018F2827E2C77200C80BFF /* MainView.swift */; };
+		A8018F2B27E79D1B00C80BFF /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8018F2A27E79D1B00C80BFF /* FirebaseManager.swift */; };
 		A80C2E2F27DE4EEB006892AA /* PointTrackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C2E2E27DE4EEB006892AA /* PointTrackApp.swift */; };
 		A80C2E3127DE4EEB006892AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C2E3027DE4EEB006892AA /* ContentView.swift */; };
 		A80C2E3327DE4EEC006892AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A80C2E3227DE4EEC006892AA /* Assets.xcassets */; };
@@ -46,6 +48,8 @@
 
 /* Begin PBXFileReference section */
 		A8018F1727E188DE00C80BFF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A8018F2827E2C77200C80BFF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		A8018F2A27E79D1B00C80BFF /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		A80C2E2B27DE4EEB006892AA /* PointTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PointTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A80C2E2E27DE4EEB006892AA /* PointTrackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointTrackApp.swift; sourceTree = "<group>"; };
 		A80C2E3027DE4EEB006892AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 		A8018F1627E1872700C80BFF /* Repoistory */ = {
 			isa = PBXGroup;
 			children = (
+				A8018F2A27E79D1B00C80BFF /* FirebaseManager.swift */,
 			);
 			path = Repoistory;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 				A8859A3927DE518C0067436A /* LoginView.swift */,
 				A8859A3B27DED11F0067436A /* SignUpView.swift */,
 				A8859A3D27DED13B0067436A /* ForgotPasswordView.swift */,
+				A8018F2827E2C77200C80BFF /* MainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -329,6 +335,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8859A3C27DED11F0067436A /* SignUpView.swift in Sources */,
+				A8018F2927E2C77200C80BFF /* MainView.swift in Sources */,
+				A8018F2B27E79D1B00C80BFF /* FirebaseManager.swift in Sources */,
 				A8859A3A27DE518C0067436A /* LoginView.swift in Sources */,
 				A80C2E3127DE4EEB006892AA /* ContentView.swift in Sources */,
 				A8859A3E27DED13B0067436A /* ForgotPasswordView.swift in Sources */,

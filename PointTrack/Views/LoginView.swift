@@ -10,17 +10,19 @@ import SwiftUI
 struct LoginView: View {
     @State private var email: String = ""
     @State private var password: String = ""
+    @State private var loginStatusMessage = ""
+    @State private var shouldTransit = false
     
     var body: some View {
         NavigationView {
             VStack {
-                Image("Point_Track_Main_Logo")                .ignoresSafeArea(edges: .top)
+                Image("Point_Track_Main_Logo")
+                    .ignoresSafeArea(edges: .top)
                 
                 TextField(
                     "Email",
                     text: $email
                 )
-
                     .textFieldStyle(.roundedBorder)
                     .border(Color("MainColor"))
                     .padding(.horizontal)
@@ -44,10 +46,15 @@ struct LoginView: View {
                     
                 }
                 
-                Button(action: login) {
-                    Text("Login")
-                        .foregroundColor(Color.white)
-
+                Button {
+                } label: {
+                    NavigationLink(destination: MainView().navigationBarBackButtonHidden(true), isActive: $shouldTransit) {
+                        Text("Login")
+                            .foregroundColor(Color.white)
+                            .onTapGesture {
+                                self.login()
+                            }
+                    }
                 }
                     .buttonStyle(.bordered)
                     .background(Color("MainColor"))
@@ -56,7 +63,13 @@ struct LoginView: View {
                     Text("Don't have an account? Sign up here")
                         .foregroundColor(Color("MainColor"))
                         .bold()
-                }.foregroundColor(Color.black)
+                }
+                    .foregroundColor(Color.black)
+                
+                Text(self.loginStatusMessage)
+                    .foregroundColor(.red)
+                    .padding()
+                    .multilineTextAlignment(.center)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("BackgroundColor"))
@@ -64,7 +77,14 @@ struct LoginView: View {
     }
     
     private func login() {
-        
+        FirebaseManager.shared.auth.signIn(withEmail: email, password: password) { result, error in
+            if let error = error {
+                print("Failed to login user:", error)
+                self.loginStatusMessage = error.localizedDescription
+                return
+            }
+            self.shouldTransit = true
+        }
     }
 }
 

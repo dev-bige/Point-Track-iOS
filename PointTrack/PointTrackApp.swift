@@ -10,10 +10,7 @@ import Firebase
 
 @main
 struct PointTrackApp: App {
-    
-    init() {
-        FirebaseApp.configure()
-    }
+
     
     var body: some Scene {
         WindowGroup {
