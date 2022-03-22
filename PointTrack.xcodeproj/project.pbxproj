@@ -27,6 +27,7 @@
 		A8859A3A27DE518C0067436A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8859A3927DE518C0067436A /* LoginView.swift */; };
 		A8859A3C27DED11F0067436A /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8859A3B27DED11F0067436A /* SignUpView.swift */; };
 		A8859A3E27DED13B0067436A /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8859A3D27DED13B0067436A /* ForgotPasswordView.swift */; };
+		A895B2BD27E972B9006116B9 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A895B2BC27E972B9006116B9 /* SessionStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		A8859A3927DE518C0067436A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A8859A3B27DED11F0067436A /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		A8859A3D27DED13B0067436A /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		A895B2BC27E972B9006116B9 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				A8018F2A27E79D1B00C80BFF /* FirebaseManager.swift */,
+				A895B2BC27E972B9006116B9 /* SessionStore.swift */,
 			);
 			path = Repoistory;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				A8018F2927E2C77200C80BFF /* MainView.swift in Sources */,
 				A8018F2B27E79D1B00C80BFF /* FirebaseManager.swift in Sources */,
 				A8859A3A27DE518C0067436A /* LoginView.swift in Sources */,
+				A895B2BD27E972B9006116B9 /* SessionStore.swift in Sources */,
 				A80C2E3127DE4EEB006892AA /* ContentView.swift in Sources */,
 				A8859A3E27DED13B0067436A /* ForgotPasswordView.swift in Sources */,
 				A80C2E2F27DE4EEB006892AA /* PointTrackApp.swift in Sources */,

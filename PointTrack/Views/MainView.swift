@@ -11,6 +11,7 @@ struct MainView: View {
     var body: some View {
         VStack {
             Image("Point_Track_Secondary_Logo")                .ignoresSafeArea(edges: .top)
+            
             Text("News")
                 .font(.title)
                 .fontWeight(.bold)

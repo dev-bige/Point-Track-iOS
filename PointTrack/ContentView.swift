@@ -6,11 +6,20 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct ContentView: View {
+    
+    @StateObject var session = SessionStore()
     var body: some View {
-        LoginView()
-        //ForgotPasswordView()
+        Group {
+            if session.session != nil {
+                MainView().environmentObject(session)
+            } else {
+                LoginView().environmentObject(session)
+            }
+        }
+        .environmentObject(session)
     }
 }
 

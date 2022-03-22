@@ -21,7 +21,7 @@ class FirebaseManager: NSObject {
 
         self.auth = Auth.auth()
         self.firestore = Firestore.firestore()
-
+        
         super.init()
     }
 
