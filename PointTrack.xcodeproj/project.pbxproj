@@ -24,6 +24,8 @@
 		A80C2E4027DE4EEC006892AA /* PointTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C2E3F27DE4EEC006892AA /* PointTrackTests.swift */; };
 		A80C2E4A27DE4EEC006892AA /* PointTrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C2E4927DE4EEC006892AA /* PointTrackUITests.swift */; };
 		A80C2E4C27DE4EEC006892AA /* PointTrackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C2E4B27DE4EEC006892AA /* PointTrackUITestsLaunchTests.swift */; };
+		A8848A0027FD24CB00F3C55B /* MyPointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88489FF27FD24CB00F3C55B /* MyPointsView.swift */; };
+		A8848A0827FD2BB700F3C55B /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8848A0727FD2BB700F3C55B /* ButtonView.swift */; };
 		A8859A3A27DE518C0067436A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8859A3927DE518C0067436A /* LoginView.swift */; };
 		A8859A3C27DED11F0067436A /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8859A3B27DED11F0067436A /* SignUpView.swift */; };
 		A8859A3E27DED13B0067436A /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8859A3D27DED13B0067436A /* ForgotPasswordView.swift */; };
@@ -65,6 +67,8 @@
 		A80C2E4527DE4EEC006892AA /* PointTrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PointTrackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A80C2E4927DE4EEC006892AA /* PointTrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointTrackUITests.swift; sourceTree = "<group>"; };
 		A80C2E4B27DE4EEC006892AA /* PointTrackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointTrackUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A88489FF27FD24CB00F3C55B /* MyPointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPointsView.swift; sourceTree = "<group>"; };
+		A8848A0727FD2BB700F3C55B /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		A8859A3927DE518C0067436A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A8859A3B27DED11F0067436A /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		A8859A3D27DED13B0067436A /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
@@ -177,9 +181,61 @@
 			path = PointTrackUITests;
 			sourceTree = "<group>";
 		};
+		A88489FD27FD249B00F3C55B /* AuthView */ = {
+			isa = PBXGroup;
+			children = (
+				A8859A3927DE518C0067436A /* LoginView.swift */,
+				A8859A3B27DED11F0067436A /* SignUpView.swift */,
+				A8859A3D27DED13B0067436A /* ForgotPasswordView.swift */,
+			);
+			path = AuthView;
+			sourceTree = "<group>";
+		};
+		A88489FE27FD24B400F3C55B /* MyPoints */ = {
+			isa = PBXGroup;
+			children = (
+				A895B2C027EA86D0006116B9 /* MyPointsListView.swift */,
+				A88489FF27FD24CB00F3C55B /* MyPointsView.swift */,
+			);
+			path = MyPoints;
+			sourceTree = "<group>";
+		};
+		A8848A0127FD2A8B00F3C55B /* Deadline */ = {
+			isa = PBXGroup;
+			children = (
+				A895B2C227EA8828006116B9 /* ApplicationDeadlineView.swift */,
+			);
+			path = Deadline;
+			sourceTree = "<group>";
+		};
+		A8848A0227FD2A9200F3C55B /* Budget */ = {
+			isa = PBXGroup;
+			children = (
+				A895B2C427EA8849006116B9 /* MyBudgetView.swift */,
+			);
+			path = Budget;
+			sourceTree = "<group>";
+		};
+		A8848A0327FD2AAF00F3C55B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A8018F2827E2C77200C80BFF /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		A8848A0427FD2AB500F3C55B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A895B2C827EAA559006116B9 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		A8859A3627DE51660067436A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A8848A0727FD2BB700F3C55B /* ButtonView.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -194,14 +250,12 @@
 		A8859A3827DE51750067436A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A8859A3927DE518C0067436A /* LoginView.swift */,
-				A8859A3B27DED11F0067436A /* SignUpView.swift */,
-				A8859A3D27DED13B0067436A /* ForgotPasswordView.swift */,
-				A8018F2827E2C77200C80BFF /* MainView.swift */,
-				A895B2C027EA86D0006116B9 /* MyPointsListView.swift */,
-				A895B2C227EA8828006116B9 /* ApplicationDeadlineView.swift */,
-				A895B2C427EA8849006116B9 /* MyBudgetView.swift */,
-				A895B2C827EAA559006116B9 /* SettingsView.swift */,
+				A88489FD27FD249B00F3C55B /* AuthView */,
+				A8848A0227FD2A9200F3C55B /* Budget */,
+				A8848A0127FD2A8B00F3C55B /* Deadline */,
+				A8848A0327FD2AAF00F3C55B /* Main */,
+				A88489FE27FD24B400F3C55B /* MyPoints */,
+				A8848A0427FD2AB500F3C55B /* Settings */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -355,12 +409,14 @@
 				A8018F2927E2C77200C80BFF /* MainView.swift in Sources */,
 				A8018F2B27E79D1B00C80BFF /* FirebaseManager.swift in Sources */,
 				A8859A3A27DE518C0067436A /* LoginView.swift in Sources */,
+				A8848A0827FD2BB700F3C55B /* ButtonView.swift in Sources */,
 				A895B2BD27E972B9006116B9 /* SessionStore.swift in Sources */,
 				A80C2E3127DE4EEB006892AA /* ContentView.swift in Sources */,
 				A895B2C327EA8828006116B9 /* ApplicationDeadlineView.swift in Sources */,
 				A895B2C927EAA559006116B9 /* SettingsView.swift in Sources */,
 				A8859A3E27DED13B0067436A /* ForgotPasswordView.swift in Sources */,
 				A80C2E2F27DE4EEB006892AA /* PointTrackApp.swift in Sources */,
+				A8848A0027FD24CB00F3C55B /* MyPointsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
