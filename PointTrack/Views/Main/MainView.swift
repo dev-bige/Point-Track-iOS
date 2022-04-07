@@ -7,46 +7,75 @@
 
 import SwiftUI
 
+struct BodyView: View {
+    var body: some View {
+        NavigationView {
+            VStack {
+                Image("Point_Track_Secondary_Logo")
+                    .padding(.bottom, 100.0)
+                    .ignoresSafeArea(edges: .top)
+                
+//                NavigationLink(destination: MyPointsListView()) {
+//                    ButtonView(buttonText: "My Points")
+//                }
+//
+//                NavigationLink(destination: ApplicationDeadlineView()) {
+//                    ButtonView(buttonText: "Application Deadline")
+//                }
+//
+//                NavigationLink(destination: MyBudgetView()) {
+//                    ButtonView(buttonText: "My Budget")
+//                }
+                
+                Text("News")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color("MainColor"))
+            
+            }
+            .navigationTitle("Home")
+            .navigationBarTitleDisplayMode(.inline)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color("BackgroundColor"))
+        }
+    }
+}
+
 struct MainView: View {
     
-//    init() {
-//        UINavigationBar.appearance().backgroundColor = UIColor(Color("MainColor"))
-//        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
-//    }
-    
     var body: some View {
-        VStack {
-            Image("Point_Track_Secondary_Logo")
-                .padding(.bottom, 100.0)
-                .ignoresSafeArea(edges: .top)
+        TabView {
+            BodyView()
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("Home")
+                }
             
-            NavigationLink(destination: MyPointsListView()) {
-                ButtonView(buttonText: "My Points")
-            }
+            MyPointsListView()
+                .tabItem {
+                    Image(systemName: "point.topleft.down.curvedto.point.bottomright.up.fill")
+                    Text("My Points")
+                }
             
-            NavigationLink(destination: ApplicationDeadlineView()) {
-                ButtonView(buttonText: "Application Deadline")
-            }
+            ApplicationDeadlineView()
+                .tabItem {
+                    Image(systemName: "calendar")
+                    Text("Deadlines")
+                }
             
-            NavigationLink(destination: MyBudgetView()) {
-                ButtonView(buttonText: "My Budget")
-            }
+            MyBudgetView()
+                .tabItem {
+                    Image(systemName: "dollarsign.square")
+                    Text("Budget")
+                }
             
-            Text("News")
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(Color("MainColor"))
-        
+            SettingsView()
+                .tabItem {
+                    Image(systemName: "gear")
+                    Text("Settings")
+                }
         }
-        .navigationTitle("Home")
-        .navigationBarTitleDisplayMode(.inline)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color("BackgroundColor"))
-        .toolbar {
-            NavigationLink(destination: SettingsView()) {
-                Image("White_More_Icon")
-            }
-        }
+        .accentColor(Color("MainColor"))
     }
 }
 

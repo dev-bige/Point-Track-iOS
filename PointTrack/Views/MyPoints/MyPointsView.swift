@@ -12,7 +12,9 @@ struct MyPointsView: View {
     var speciesType: String
 
     var body: some View {
-        Text("Species: \(speciesType)")
+        VStack {
+            Text("Species: \(speciesType)")
+        }
     }
 }
 

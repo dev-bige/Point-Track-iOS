@@ -9,13 +9,15 @@ import SwiftUI
 
 struct ApplicationDeadlineView: View {
     var body: some View {
-        VStack {
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            }
+            .navigationTitle("Application Deadlines")
+            .navigationBarTitleDisplayMode(.inline)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color("BackgroundColor"))
         }
-        .navigationTitle("Application Deadlines")
-        .navigationBarTitleDisplayMode(.inline)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color("BackgroundColor"))
     }
 }
 

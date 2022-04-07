@@ -13,10 +13,10 @@ struct ContentView: View {
     @StateObject var session = SessionStore()
     var body: some View {
         Group {
-            if session.session != nil {
-                MainView().environmentObject(session)
-            } else {
+            if session.session == nil {
                 LoginView().environmentObject(session)
+            } else {
+                MainView().environmentObject(session)
             }
         }
         .environmentObject(session)
