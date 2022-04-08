@@ -15,6 +15,10 @@ struct MyPointsView: View {
         VStack {
             Text("Species: \(speciesType)")
         }
+        .navigationTitle("\(speciesType) Points")
+        .navigationBarTitleDisplayMode(.inline)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color("BackgroundColor"))
     }
 }
 

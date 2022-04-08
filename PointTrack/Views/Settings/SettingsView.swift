@@ -11,7 +11,42 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+                NavigationLink(destination: MyBudgetApplicationsView()) {
+                   ButtonView(buttonText: "Edit Profile")
+                }
+                .padding(.vertical)
+                .buttonStyle(.bordered)
+                .background(Color("MainColor"))
+                .cornerRadius(10)
+                .padding()
+                .buttonStyle(PlainButtonStyle())
+                
+                NavigationLink(destination: MyBudgetApplicationsView()) {
+                   ButtonView(buttonText: "Reset Password")
+                }
+                .padding(.vertical)
+                .buttonStyle(.bordered)
+                .background(Color("MainColor"))
+                .cornerRadius(10)
+                .padding()
+                
+                NavigationLink(destination: MyBudgetApplicationsView()) {
+                   ButtonView(buttonText: "Send Feedback")
+                }
+                .padding(.vertical)
+                .buttonStyle(.bordered)
+                .background(Color("MainColor"))
+                .cornerRadius(10)
+                .padding()
+                
+                NavigationLink(destination: MyBudgetApplicationsView()) {
+                   ButtonView(buttonText: "Logout")
+                }
+                .padding(.vertical)
+                .buttonStyle(.bordered)
+                .background(Color("MainColor"))
+                .cornerRadius(10)
+                .padding()
             }
             .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.inline)

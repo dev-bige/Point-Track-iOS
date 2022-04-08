@@ -24,37 +24,69 @@ struct MyPointsListView: View {
         NavigationView {
             VStack {
                 
-                NavigationLink(destination: MyPointsView(speciesType: "antelope")) {
-                    ButtonView(buttonText: "Antelope")
+                NavigationLink(destination: MyPointsView(speciesType: "Antelope")) {
+                   ButtonView(buttonText: "Antelope")
                 }
-                
-                NavigationLink(destination: MyPointsView(speciesType: "black_bear")) {
+                .padding(.vertical)
+                .buttonStyle(.bordered)
+                .background(Color("MainColor"))
+                .cornerRadius(10)
+
+                NavigationLink(destination: MyPointsView(speciesType: "Black Bear")) {
                     ButtonView(buttonText: "Black Bear")
                 }
-                
+                .padding(.vertical)
+                .buttonStyle(.bordered)
+                .background(Color("MainColor"))
+                .cornerRadius(10)
+
                 NavigationLink(destination: MyPointsView(speciesType: "bighorn_sheep")) {
                     ButtonView(buttonText: "Bighorn Sheep")
                 }
+                .padding(.vertical)
+                .buttonStyle(.bordered)
+                .background(Color("MainColor"))
+                .cornerRadius(10)
                 
-                NavigationLink(destination: MyPointsView(speciesType: "bison")) {
+                NavigationLink(destination: MyPointsView(speciesType: "Bison")) {
                     ButtonView(buttonText: "Bison")
                 }
+                .padding(.vertical)
+                .buttonStyle(.bordered)
+                .background(Color("MainColor"))
+                .cornerRadius(10)
                 
-                NavigationLink(destination: MyPointsView(speciesType: "elk")) {
+                NavigationLink(destination: MyPointsView(speciesType: "Elk")) {
                     ButtonView(buttonText: "Elk")
                 }
+                .padding(.vertical)
+                .buttonStyle(.bordered)
+                .background(Color("MainColor"))
+                .cornerRadius(10)
                 
                 NavigationLink(destination: MyPointsView(speciesType: "Deer")) {
                     ButtonView(buttonText: "Deer")
                 }
+                .padding(.vertical)
+                .buttonStyle(.bordered)
+                .background(Color("MainColor"))
+                .cornerRadius(10)
                 
                 NavigationLink(destination: MyPointsView(speciesType: "Moose")) {
                     ButtonView(buttonText: "Moose")
                 }
+                .padding(.vertical)
+                .buttonStyle(.bordered)
+                .background(Color("MainColor"))
+                .cornerRadius(10)
                 
                 NavigationLink(destination: MyPointsView(speciesType: "Mountain Goat")) {
                     ButtonView(buttonText: "Mountain Goat")
                 }
+                .padding(.vertical)
+                .buttonStyle(.bordered)
+                .background(Color("MainColor"))
+                .cornerRadius(10)
             }
             .navigationTitle("My Points")
             .navigationBarTitleDisplayMode(.inline)

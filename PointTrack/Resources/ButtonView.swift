@@ -12,17 +12,11 @@ struct ButtonView: View {
     var buttonText: String
     
     var body: some View {
-        Button {
-        } label: {
         Text(buttonText)
             .foregroundColor(Color.white)
             .bold()
             .background(Color("MainColor"))
             .frame(width: 275.0, height: 5.0)
-        }
-        .padding(.vertical)
-        .buttonStyle(.bordered)
-        .background(Color("MainColor"))
     }
 }
 
