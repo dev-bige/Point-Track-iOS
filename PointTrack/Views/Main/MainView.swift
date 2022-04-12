@@ -7,7 +7,38 @@
 
 import SwiftUI
 
+struct NewsPostRow: View {
+    var newsPost: NewsPost
+    
+    var body: some View {
+        HStack(alignment: .center) {
+            Image(systemName: "newspaper")
+            VStack(alignment: .trailing) {
+                Text("\(newsPost.title)")
+                    .font(.subheadline)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color("MainColor"))
+                
+                Text("At \(newsPost.website)")
+                Text("By: \(newsPost.author)")
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.white)
+        .listRowSeparator(.hidden)
+        .cornerRadius(10)
+    }
+}
+
 struct BodyView: View {
+    
+    let newsPosts = [
+            NewsPost(
+                title: "2022 Arizona Strategy", author: "GoHunt", link: "gohunt.com", date: "4-11-22", website: "gohunt", imageLink: "Point_Track_Secondary_Logo"
+                )
+        ]
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -31,6 +62,13 @@ struct BodyView: View {
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(Color("MainColor"))
+                
+                List(newsPosts) { newsPost in
+                    NewsPostRow(newsPost: newsPost)
+                }
+                .background(Color("BackgroundColor"))
+                .listStyle(PlainListStyle())
+                .padding()
             
             }
             .navigationTitle("Home")

@@ -34,6 +34,7 @@ struct SignUpView: View {
                 .textFieldStyle(.roundedBorder)
                 .border(Color("MainColor"))
                 .padding([.leading, .bottom, .trailing])
+                .keyboardType(.alphabet)
         
             TextField(
                 "Username",
@@ -42,6 +43,7 @@ struct SignUpView: View {
                 .textFieldStyle(.roundedBorder)
                 .border(Color("MainColor"))
                 .padding([.leading, .bottom, .trailing])
+                .keyboardType(.default)
             
             TextField(
                 "Email",
@@ -50,6 +52,7 @@ struct SignUpView: View {
                 .textFieldStyle(.roundedBorder)
                 .border(Color("MainColor"))
                 .padding([.leading, .bottom, .trailing])
+                .keyboardType(.emailAddress)
             
             TextField(
                 "Resident State",

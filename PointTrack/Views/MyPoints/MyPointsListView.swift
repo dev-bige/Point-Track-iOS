@@ -40,7 +40,7 @@ struct MyPointsListView: View {
                 .background(Color("MainColor"))
                 .cornerRadius(10)
 
-                NavigationLink(destination: MyPointsView(speciesType: "bighorn_sheep")) {
+                NavigationLink(destination: MyPointsView(speciesType: "Bighorn Sheep")) {
                     ButtonView(buttonText: "Bighorn Sheep")
                 }
                 .padding(.vertical)

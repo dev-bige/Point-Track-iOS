@@ -29,6 +29,7 @@
 		A8848A0E2800A1A500F3C55B /* ApplicationDeadline.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8848A0D2800A1A500F3C55B /* ApplicationDeadline.swift */; };
 		A8848A102800B2B800F3C55B /* MyBudgetApplicationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8848A0F2800B2B800F3C55B /* MyBudgetApplicationsView.swift */; };
 		A8848A122800B2C300F3C55B /* MyBudgetTagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8848A112800B2C300F3C55B /* MyBudgetTagsView.swift */; };
+		A8848A14280529D500F3C55B /* NewsPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8848A13280529D500F3C55B /* NewsPost.swift */; };
 		A8859A3A27DE518C0067436A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8859A3927DE518C0067436A /* LoginView.swift */; };
 		A8859A3C27DED11F0067436A /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8859A3B27DED11F0067436A /* SignUpView.swift */; };
 		A8859A3E27DED13B0067436A /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8859A3D27DED13B0067436A /* ForgotPasswordView.swift */; };
@@ -75,6 +76,7 @@
 		A8848A0D2800A1A500F3C55B /* ApplicationDeadline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDeadline.swift; sourceTree = "<group>"; };
 		A8848A0F2800B2B800F3C55B /* MyBudgetApplicationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBudgetApplicationsView.swift; sourceTree = "<group>"; };
 		A8848A112800B2C300F3C55B /* MyBudgetTagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBudgetTagsView.swift; sourceTree = "<group>"; };
+		A8848A13280529D500F3C55B /* NewsPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPost.swift; sourceTree = "<group>"; };
 		A8859A3927DE518C0067436A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A8859A3B27DED11F0067436A /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		A8859A3D27DED13B0067436A /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				A8848A0D2800A1A500F3C55B /* ApplicationDeadline.swift */,
+				A8848A13280529D500F3C55B /* NewsPost.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				A8848A122800B2C300F3C55B /* MyBudgetTagsView.swift in Sources */,
 				A895B2C927EAA559006116B9 /* SettingsView.swift in Sources */,
 				A8848A102800B2B800F3C55B /* MyBudgetApplicationsView.swift in Sources */,
+				A8848A14280529D500F3C55B /* NewsPost.swift in Sources */,
 				A8859A3E27DED13B0067436A /* ForgotPasswordView.swift in Sources */,
 				A80C2E2F27DE4EEB006892AA /* PointTrackApp.swift in Sources */,
 				A8848A0027FD24CB00F3C55B /* MyPointsView.swift in Sources */,
