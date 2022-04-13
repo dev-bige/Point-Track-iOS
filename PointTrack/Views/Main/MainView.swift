@@ -11,60 +11,53 @@ struct NewsPostRow: View {
     var newsPost: NewsPost
     
     var body: some View {
-        HStack(alignment: .center) {
-            Image(systemName: "newspaper")
-            VStack(alignment: .trailing) {
-                Text("\(newsPost.title)")
-                    .font(.subheadline)
-                    .fontWeight(.bold)
-                    .foregroundColor(Color("MainColor"))
+        Link(destination: URL(string: "\(newsPost.link)")!) {
+            HStack(alignment: .center) {
+                AsyncImage(
+                    url: URL(string: "\(newsPost.imageLink)")
+                )
+                .frame(width: 10, height: 10)
                 
-                Text("At \(newsPost.website)")
-                Text("By: \(newsPost.author)")
+                VStack(alignment: .trailing) {
+                    Text("\(newsPost.title)")
+                        .font(.subheadline)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color("MainColor"))
+                    
+                    Text("At \(newsPost.website)")
+                    Text("By: \(newsPost.author)")
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
+        .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.white)
         .listRowSeparator(.hidden)
+        .listRowBackground(Color("BackgroundColor"))
         .cornerRadius(10)
     }
 }
 
 struct BodyView: View {
     
-    let newsPosts = [
-            NewsPost(
-                title: "2022 Arizona Strategy", author: "GoHunt", link: "gohunt.com", date: "4-11-22", website: "gohunt", imageLink: "Point_Track_Secondary_Logo"
-                )
-        ]
+    @ObservedObject private var newsPostsViewModel = NewsPostViewModel()
     
     var body: some View {
         NavigationView {
             VStack {
                 Image("Point_Track_Secondary_Logo")
-                    .padding(.bottom, 100.0)
-                    .ignoresSafeArea(edges: .top)
-                
-//                NavigationLink(destination: MyPointsListView()) {
-//                    ButtonView(buttonText: "My Points")
-//                }
-//
-//                NavigationLink(destination: ApplicationDeadlineView()) {
-//                    ButtonView(buttonText: "Application Deadline")
-//                }
-//
-//                NavigationLink(destination: MyBudgetView()) {
-//                    ButtonView(buttonText: "My Budget")
-//                }
                 
                 Text("News")
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(Color("MainColor"))
                 
-                List(newsPosts) { newsPost in
+                List(newsPostsViewModel.newsPosts) { newsPost in
                     NewsPostRow(newsPost: newsPost)
+                }
+                .onAppear() {
+                    self.newsPostsViewModel.getAllNewsPosts()
                 }
                 .background(Color("BackgroundColor"))
                 .listStyle(PlainListStyle())

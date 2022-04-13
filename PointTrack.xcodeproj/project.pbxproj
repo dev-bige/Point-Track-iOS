@@ -38,6 +38,10 @@
 		A895B2C327EA8828006116B9 /* ApplicationDeadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A895B2C227EA8828006116B9 /* ApplicationDeadlineView.swift */; };
 		A895B2C527EA8849006116B9 /* MyBudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A895B2C427EA8849006116B9 /* MyBudgetView.swift */; };
 		A895B2C927EAA559006116B9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A895B2C827EAA559006116B9 /* SettingsView.swift */; };
+		A8A693FC280647FD00988F70 /* NewsPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A693FB280647FD00988F70 /* NewsPostViewModel.swift */; };
+		A8A693FE280650F400988F70 /* ApplicationDeadlineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A693FD280650F400988F70 /* ApplicationDeadlineViewModel.swift */; };
+		A8A694002806708D00988F70 /* MyPointsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A693FF2806708D00988F70 /* MyPointsViewModel.swift */; };
+		A8A69402280670F600988F70 /* UserPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A69401280670F600988F70 /* UserPoints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +89,10 @@
 		A895B2C227EA8828006116B9 /* ApplicationDeadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDeadlineView.swift; sourceTree = "<group>"; };
 		A895B2C427EA8849006116B9 /* MyBudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBudgetView.swift; sourceTree = "<group>"; };
 		A895B2C827EAA559006116B9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A8A693FB280647FD00988F70 /* NewsPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPostViewModel.swift; sourceTree = "<group>"; };
+		A8A693FD280650F400988F70 /* ApplicationDeadlineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDeadlineViewModel.swift; sourceTree = "<group>"; };
+		A8A693FF2806708D00988F70 /* MyPointsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPointsViewModel.swift; sourceTree = "<group>"; };
+		A8A69401280670F600988F70 /* UserPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPoints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +159,7 @@
 		A80C2E2D27DE4EEB006892AA /* PointTrack */ = {
 			isa = PBXGroup;
 			children = (
+				A8848A152806479100F3C55B /* ViewModels */,
 				A8018F1627E1872700C80BFF /* Repoistory */,
 				A8859A3827DE51750067436A /* Views */,
 				A8859A3727DE516D0067436A /* Models */,
@@ -242,6 +251,16 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		A8848A152806479100F3C55B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A8A693FB280647FD00988F70 /* NewsPostViewModel.swift */,
+				A8A693FD280650F400988F70 /* ApplicationDeadlineViewModel.swift */,
+				A8A693FF2806708D00988F70 /* MyPointsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		A8859A3627DE51660067436A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +274,7 @@
 			children = (
 				A8848A0D2800A1A500F3C55B /* ApplicationDeadline.swift */,
 				A8848A13280529D500F3C55B /* NewsPost.swift */,
+				A8A69401280670F600988F70 /* UserPoints.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -416,7 +436,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8859A3C27DED11F0067436A /* SignUpView.swift in Sources */,
+				A8A69402280670F600988F70 /* UserPoints.swift in Sources */,
 				A895B2C527EA8849006116B9 /* MyBudgetView.swift in Sources */,
+				A8A693FC280647FD00988F70 /* NewsPostViewModel.swift in Sources */,
 				A895B2C127EA86D0006116B9 /* MyPointsListView.swift in Sources */,
 				A8018F2927E2C77200C80BFF /* MainView.swift in Sources */,
 				A8018F2B27E79D1B00C80BFF /* FirebaseManager.swift in Sources */,
@@ -425,6 +447,7 @@
 				A8848A0827FD2BB700F3C55B /* ButtonView.swift in Sources */,
 				A895B2BD27E972B9006116B9 /* SessionStore.swift in Sources */,
 				A80C2E3127DE4EEB006892AA /* ContentView.swift in Sources */,
+				A8A693FE280650F400988F70 /* ApplicationDeadlineViewModel.swift in Sources */,
 				A895B2C327EA8828006116B9 /* ApplicationDeadlineView.swift in Sources */,
 				A8848A122800B2C300F3C55B /* MyBudgetTagsView.swift in Sources */,
 				A895B2C927EAA559006116B9 /* SettingsView.swift in Sources */,
@@ -433,6 +456,7 @@
 				A8859A3E27DED13B0067436A /* ForgotPasswordView.swift in Sources */,
 				A80C2E2F27DE4EEB006892AA /* PointTrackApp.swift in Sources */,
 				A8848A0027FD24CB00F3C55B /* MyPointsView.swift in Sources */,
+				A8A694002806708D00988F70 /* MyPointsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

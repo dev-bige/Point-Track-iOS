@@ -17,11 +17,11 @@ struct ApplicationDeadlineRow: View {
                 .fontWeight(.bold)
                 .padding(.top)
             HStack {
-                Text(applicationDeadline.species)
+                Text(applicationDeadline.details)
                     .multilineTextAlignment(.leading)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .foregroundColor(Color.white)
-                Text(applicationDeadline.deadlineDate)
+                Text(applicationDeadline.applicationPeriod)
                     .multilineTextAlignment(.trailing)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .foregroundColor(Color.white)
@@ -38,21 +38,18 @@ struct ApplicationDeadlineRow: View {
 }
 
 struct ApplicationDeadlineView: View {
-    var body: some View {
-        let applicationDeadlines = [
-                ApplicationDeadline(
-                    title: "Colorado", species: "Elk", deadlineDate: "4-08-22"),
-                ApplicationDeadline(
-                    title: "Utah", species: "Deer", deadlineDate: "4-08-22"),
-                ApplicationDeadline(
-                    title: "Arizona", species: "Elk, Sheep", deadlineDate: "4-08-22")
-            ]
 
+    @ObservedObject private var applicationDeadlineViewModel = ApplicationDeadlineViewModel()
+    
+    var body: some View {
         NavigationView {
             VStack {
                 Text("Upcoming Deadlines")
-                List(applicationDeadlines) { applicationDeadline in
+                List(applicationDeadlineViewModel.applicationDeadlines) { applicationDeadline in
                     ApplicationDeadlineRow(applicationDeadline: applicationDeadline)
+                }
+                .onAppear() {
+                    applicationDeadlineViewModel.getAllDeadlines()
                 }
                 .background(Color("BackgroundColor"))
                 .listStyle(PlainListStyle())

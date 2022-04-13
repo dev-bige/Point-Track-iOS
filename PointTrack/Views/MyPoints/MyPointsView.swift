@@ -57,14 +57,29 @@ struct AddPointsView: View {
     }
 }
 
+struct MyPointsRow: View {
+    var userPoint: UserPoints
+    
+    var body: some View {
+        HStack {
+            Text(userPoint.state)
+            Text(userPoint.points)
+        }
+    }
+}
+
 struct MyPointsView: View {
     @State var speciesType: String
     @State private var showingAddingPointsPopover = false
+    
+    @ObservedObject private var myPointsViewModel = MyPointsViewModel()
 
     var body: some View {
         NavigationView {
             VStack {
-                Text("No points, press the \"+\" to add your points")
+                if myPointsViewModel.userPoints.count == 0 {
+                    Text("No points, press the \"+\" to add your points")
+                }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("BackgroundColor"))

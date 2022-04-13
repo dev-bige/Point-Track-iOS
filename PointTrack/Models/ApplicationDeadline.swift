@@ -9,12 +9,12 @@ import Foundation
 
 class ApplicationDeadline: Identifiable {
     var title: String
-    var species: String
-    var deadlineDate: String
+    var applicationPeriod: String
+    var details: String
     
-    init(title: String, species: String, deadlineDate: String) {
+    init(title: String, applicationPeriod: String, details: String) {
         self.title = title
-        self.species = species
-        self.deadlineDate = deadlineDate
+        self.applicationPeriod = applicationPeriod
+        self.details = details
     }
 }
