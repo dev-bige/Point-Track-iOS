@@ -42,6 +42,7 @@
 		A8A693FE280650F400988F70 /* ApplicationDeadlineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A693FD280650F400988F70 /* ApplicationDeadlineViewModel.swift */; };
 		A8A694002806708D00988F70 /* MyPointsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A693FF2806708D00988F70 /* MyPointsViewModel.swift */; };
 		A8A69402280670F600988F70 /* UserPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A69401280670F600988F70 /* UserPoints.swift */; };
+		A8A69404280C775300988F70 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A69403280C775300988F70 /* AuthViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		A8A693FD280650F400988F70 /* ApplicationDeadlineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDeadlineViewModel.swift; sourceTree = "<group>"; };
 		A8A693FF2806708D00988F70 /* MyPointsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPointsViewModel.swift; sourceTree = "<group>"; };
 		A8A69401280670F600988F70 /* UserPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPoints.swift; sourceTree = "<group>"; };
+		A8A69403280C775300988F70 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,10 +161,10 @@
 		A80C2E2D27DE4EEB006892AA /* PointTrack */ = {
 			isa = PBXGroup;
 			children = (
-				A8848A152806479100F3C55B /* ViewModels */,
-				A8018F1627E1872700C80BFF /* Repoistory */,
 				A8859A3827DE51750067436A /* Views */,
+				A8848A152806479100F3C55B /* ViewModels */,
 				A8859A3727DE516D0067436A /* Models */,
+				A8018F1627E1872700C80BFF /* Repoistory */,
 				A8859A3627DE51660067436A /* Resources */,
 				A80C2E2E27DE4EEB006892AA /* PointTrackApp.swift */,
 				A80C2E3027DE4EEB006892AA /* ContentView.swift */,
@@ -196,16 +198,6 @@
 				A80C2E4B27DE4EEC006892AA /* PointTrackUITestsLaunchTests.swift */,
 			);
 			path = PointTrackUITests;
-			sourceTree = "<group>";
-		};
-		A88489FD27FD249B00F3C55B /* AuthView */ = {
-			isa = PBXGroup;
-			children = (
-				A8859A3927DE518C0067436A /* LoginView.swift */,
-				A8859A3B27DED11F0067436A /* SignUpView.swift */,
-				A8859A3D27DED13B0067436A /* ForgotPasswordView.swift */,
-			);
-			path = AuthView;
 			sourceTree = "<group>";
 		};
 		A88489FE27FD24B400F3C55B /* MyPoints */ = {
@@ -254,9 +246,10 @@
 		A8848A152806479100F3C55B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				A8A693FB280647FD00988F70 /* NewsPostViewModel.swift */,
 				A8A693FD280650F400988F70 /* ApplicationDeadlineViewModel.swift */,
+				A8A69403280C775300988F70 /* AuthViewModel.swift */,
 				A8A693FF2806708D00988F70 /* MyPointsViewModel.swift */,
+				A8A693FB280647FD00988F70 /* NewsPostViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -282,14 +275,40 @@
 		A8859A3827DE51750067436A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A88489FD27FD249B00F3C55B /* AuthView */,
 				A8848A0227FD2A9200F3C55B /* Budget */,
 				A8848A0127FD2A8B00F3C55B /* Deadline */,
+				A8A69407280D09C900988F70 /* ForgotPassword */,
+				A8A69405280D099000988F70 /* Login */,
 				A8848A0327FD2AAF00F3C55B /* Main */,
 				A88489FE27FD24B400F3C55B /* MyPoints */,
 				A8848A0427FD2AB500F3C55B /* Settings */,
+				A8A69406280D09A000988F70 /* SignUp */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A8A69405280D099000988F70 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A8859A3927DE518C0067436A /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A8A69406280D09A000988F70 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				A8859A3B27DED11F0067436A /* SignUpView.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		A8A69407280D09C900988F70 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				A8859A3D27DED13B0067436A /* ForgotPasswordView.swift */,
+			);
+			path = ForgotPassword;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,6 +471,7 @@
 				A8848A122800B2C300F3C55B /* MyBudgetTagsView.swift in Sources */,
 				A895B2C927EAA559006116B9 /* SettingsView.swift in Sources */,
 				A8848A102800B2B800F3C55B /* MyBudgetApplicationsView.swift in Sources */,
+				A8A69404280C775300988F70 /* AuthViewModel.swift in Sources */,
 				A8848A14280529D500F3C55B /* NewsPost.swift in Sources */,
 				A8859A3E27DED13B0067436A /* ForgotPasswordView.swift in Sources */,
 				A80C2E2F27DE4EEB006892AA /* PointTrackApp.swift in Sources */,

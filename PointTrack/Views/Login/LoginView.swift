@@ -10,11 +10,10 @@ import SwiftUI
 struct LoginView: View {
     @State private var email: String = ""
     @State private var password: String = ""
-    @State private var loginStatusMessage = ""
-    @State private var shouldTransit = false
     
+    @ObservedObject private var authViewModel = AuthViewModel()
+
     var body: some View {
-        NavigationView {
             VStack {
                 Image("Point_Track_Main_Logo")
                     .ignoresSafeArea(edges: .top)
@@ -48,12 +47,14 @@ struct LoginView: View {
                 
                 Button {
                 } label: {
-                    NavigationLink(destination: MainView().navigationBarBackButtonHidden(true), isActive: $shouldTransit) {
-                        Text("Login")
-                            .foregroundColor(Color.white)
-                            .onTapGesture {
-                                self.login()
-                            }
+                    NavigationLink(
+                        destination: MainView().navigationBarBackButtonHidden(true),
+                        isActive: self.$authViewModel.shouldTransit) {
+                            Text("Login")
+                                .foregroundColor(Color.white)
+                                .onTapGesture {
+                                    self.authViewModel.login(email: email, password: password)
+                                }
                     }
                 }
                     .buttonStyle(.bordered)
@@ -66,25 +67,13 @@ struct LoginView: View {
                 }
                     .foregroundColor(Color.black)
                 
-                Text(self.loginStatusMessage)
+                Text(self.authViewModel.loginStatusMessage)
                     .foregroundColor(.red)
                     .padding()
                     .multilineTextAlignment(.center)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("BackgroundColor"))
-        }
-    }
-    
-    private func login() {
-        FirebaseManager.shared.auth.signIn(withEmail: email, password: password) { result, error in
-            if let error = error {
-                print("Failed to login user:", error)
-                self.loginStatusMessage = error.localizedDescription
-                return
-            }
-            self.shouldTransit = true
-        }
     }
 }
 

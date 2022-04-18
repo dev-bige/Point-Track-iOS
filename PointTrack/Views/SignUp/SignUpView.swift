@@ -114,7 +114,7 @@ struct SignUpView: View {
             }
             
             guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
-            let userData = ["email": self.email, "uid": uid, "name": self.name, "username": self.username, "residentState": self.residentState, "createdOn": Date.now] as [String : Any]
+            let userData = ["email": self.email, "uid": uid, "name": self.name, "username": self.username, "residentState": self.residentState, "createdOn": Date.now, "devicedCreatedOn": "iOS"] as [String : Any]
             
             FirebaseManager.shared.firestore.collection("users")
                 .document(uid).setData(userData) { error in

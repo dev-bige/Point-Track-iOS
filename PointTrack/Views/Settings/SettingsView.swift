@@ -8,41 +8,53 @@
 import SwiftUI
 
 struct SettingsView: View {
+    
+    @ObservedObject private var authViewModel = AuthViewModel()
+    
     var body: some View {
-        NavigationView {
             VStack {
                 NavigationLink(destination: MyBudgetApplicationsView()) {
-                   ButtonView(buttonText: "Edit Profile")
+                   Text("Edit Profile")
+                        .foregroundColor(.white)
+                        .bold()
+                        .frame(width: 275.0, height: 30.0)
                 }
-                .padding(.vertical)
-                .buttonStyle(.bordered)
-                .background(Color("MainColor"))
-                .cornerRadius(10)
-                .padding()
-                .buttonStyle(PlainButtonStyle())
-                
-                NavigationLink(destination: MyBudgetApplicationsView()) {
-                   ButtonView(buttonText: "Reset Password")
-                }
-                .padding(.vertical)
                 .buttonStyle(.bordered)
                 .background(Color("MainColor"))
                 .cornerRadius(10)
                 .padding()
                 
                 NavigationLink(destination: MyBudgetApplicationsView()) {
-                   ButtonView(buttonText: "Send Feedback")
+                    Text("Reset Password")
+                        .foregroundColor(.white)
+                        .bold()
+                        .frame(width: 275.0, height: 30.0)
                 }
-                .padding(.vertical)
                 .buttonStyle(.bordered)
                 .background(Color("MainColor"))
                 .cornerRadius(10)
                 .padding()
                 
                 NavigationLink(destination: MyBudgetApplicationsView()) {
-                   ButtonView(buttonText: "Logout")
+                    Text("Send Feedback")
+                        .foregroundColor(.white)
+                        .bold()
+                        .frame(width: 275.0, height: 30.0)
                 }
-                .padding(.vertical)
+                .buttonStyle(.bordered)
+                .background(Color("MainColor"))
+                .cornerRadius(10)
+                .padding()
+                
+                NavigationLink(destination: LoginView().navigationBarBackButtonHidden(true)) {
+                    Text("Logout")
+                        .foregroundColor(.white)
+                        .bold()
+                        .frame(width: 275.0, height: 30.0)
+                }
+                .simultaneousGesture(TapGesture().onEnded({
+                    self.authViewModel.signOut()
+                }))
                 .buttonStyle(.bordered)
                 .background(Color("MainColor"))
                 .cornerRadius(10)
@@ -52,7 +64,6 @@ struct SettingsView: View {
             .navigationBarTitleDisplayMode(.inline)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("BackgroundColor"))
-        }
     }
 }
 

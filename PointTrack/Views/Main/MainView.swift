@@ -39,14 +39,15 @@ struct NewsPostRow: View {
     }
 }
 
-struct BodyView: View {
+struct MainView: View {
     
     @ObservedObject private var newsPostsViewModel = NewsPostViewModel()
     
     var body: some View {
-        NavigationView {
+        TabView {
             VStack {
                 Image("Point_Track_Secondary_Logo")
+                    .padding()
                 
                 Text("News")
                     .font(.title)
@@ -63,24 +64,14 @@ struct BodyView: View {
                 .listStyle(PlainListStyle())
                 .padding()
             
+                Spacer()
             }
-            .navigationTitle("Home")
-            .navigationBarTitleDisplayMode(.inline)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("BackgroundColor"))
-        }
-    }
-}
-
-struct MainView: View {
-    
-    var body: some View {
-        TabView {
-            BodyView()
-                .tabItem {
-                    Image(systemName: "house")
-                    Text("Home")
-                }
+            .tabItem {
+                Image(systemName: "house")
+                Text("Home")
+            }
             
             MyPointsListView()
                 .tabItem {

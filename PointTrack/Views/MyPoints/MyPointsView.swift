@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AddPointsView: View {
     @Binding var speciesType: String
+    @EnvironmentObject var myPointsViewModel: MyPointsViewModel
     
     @State private var points = ""
     @State private var state = ""
@@ -52,6 +53,17 @@ struct AddPointsView: View {
                 }
             }
             .padding()
+            
+            Button {
+            } label: {
+                    Text("Add")
+                        .foregroundColor(Color.white)
+                        .onTapGesture {
+                            myPointsViewModel.addUserPoints(species: speciesType, points: UserPoints(state: state, points: points))
+                        }
+            }
+                .buttonStyle(.bordered)
+                .background(Color("MainColor"))
         }
         .background(Color("BackgroundColor"))
     }
@@ -75,29 +87,35 @@ struct MyPointsView: View {
     @ObservedObject private var myPointsViewModel = MyPointsViewModel()
 
     var body: some View {
-        NavigationView {
             VStack {
-                if myPointsViewModel.userPoints.count == 0 {
+                if myPointsViewModel.userPoints.isEmpty {
                     Text("No points, press the \"+\" to add your points")
+                } else {
+                    List(myPointsViewModel.userPoints) { userPoints in
+                        MyPointsRow(userPoint: userPoints)
+                    }
+                    .onAppear() {
+                        self.myPointsViewModel.getUserPoints(species: speciesType)
+                    }
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("BackgroundColor"))
-        }
-        .navigationTitle("\(speciesType) Points")
-        .navigationBarTitleDisplayMode(.inline)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color("BackgroundColor"))
-        .toolbar {
-            Button(action: {
-                showingAddingPointsPopover = true
-            }) {
-                Image(systemName: "plus")
+            .navigationTitle("\(speciesType) Points")
+            .navigationBarTitleDisplayMode(.inline)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color("BackgroundColor"))
+            .toolbar {
+                Button(action: {
+                    showingAddingPointsPopover = true
+                }) {
+                    Image(systemName: "plus")
+                }
+                .popover(isPresented: $showingAddingPointsPopover) {
+                    AddPointsView(speciesType: $speciesType)
+                        .environmentObject(myPointsViewModel)
+                }
             }
-            .popover(isPresented: $showingAddingPointsPopover) {
-                AddPointsView(speciesType: $speciesType)
-            }
-        }
     }
 }
 

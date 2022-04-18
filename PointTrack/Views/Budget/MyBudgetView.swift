@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MyBudgetView: View {
     var body: some View {
-        NavigationView {
             VStack {
                 Text("Applications")
                     .font(.title)
@@ -68,7 +67,6 @@ struct MyBudgetView: View {
             .navigationBarTitleDisplayMode(.inline)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("BackgroundColor"))
-        }
     }
 }
 

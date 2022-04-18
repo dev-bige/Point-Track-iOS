@@ -13,9 +13,8 @@ struct ButtonView: View {
     
     var body: some View {
         Text(buttonText)
-            .foregroundColor(Color.white)
+            .foregroundColor(.white)
             .bold()
-            .background(Color("MainColor"))
             .frame(width: 275.0, height: 5.0)
     }
 }

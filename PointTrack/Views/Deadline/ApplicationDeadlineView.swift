@@ -42,7 +42,6 @@ struct ApplicationDeadlineView: View {
     @ObservedObject private var applicationDeadlineViewModel = ApplicationDeadlineViewModel()
     
     var body: some View {
-        NavigationView {
             VStack {
                 Text("Upcoming Deadlines")
                 List(applicationDeadlineViewModel.applicationDeadlines) { applicationDeadline in
@@ -53,13 +52,12 @@ struct ApplicationDeadlineView: View {
                 }
                 .background(Color("BackgroundColor"))
                 .listStyle(PlainListStyle())
+                .padding()
             }
             .navigationTitle("Application Deadlines")
             .navigationBarTitleDisplayMode(.inline)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("BackgroundColor"))
-        }
-        .background(Color("BackgroundColor"))
     }
 }
 

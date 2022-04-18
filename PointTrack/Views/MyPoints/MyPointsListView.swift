@@ -21,7 +21,6 @@ struct MyPointsListView: View {
 //    }
     
     var body: some View {
-        NavigationView {
             VStack {
                 
                 NavigationLink(destination: MyPointsView(speciesType: "Antelope")) {
@@ -92,7 +91,6 @@ struct MyPointsListView: View {
             .navigationBarTitleDisplayMode(.inline)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("BackgroundColor"))
-        }
     }
 }
 
