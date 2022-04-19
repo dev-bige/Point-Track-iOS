@@ -15,15 +15,10 @@ struct MyPointsListView: View {
     
     @StateObject var speciesTypeObj = SpeciesType()
     
-//    init() {
-//        UINavigationBar.appearance().backgroundColor = UIColor(Color("MainColor"))
-//        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
-//    }
-    
     var body: some View {
             VStack {
                 
-                NavigationLink(destination: MyPointsView(speciesType: "Antelope")) {
+                NavigationLink(destination: MyPointsView(speciesType: "Antelope", collectionPath: "antelope")) {
                    ButtonView(buttonText: "Antelope")
                 }
                 .padding(.vertical)
@@ -31,7 +26,7 @@ struct MyPointsListView: View {
                 .background(Color("MainColor"))
                 .cornerRadius(10)
 
-                NavigationLink(destination: MyPointsView(speciesType: "Black Bear")) {
+                NavigationLink(destination: MyPointsView(speciesType: "Black Bear", collectionPath: "black_bear")) {
                     ButtonView(buttonText: "Black Bear")
                 }
                 .padding(.vertical)
@@ -39,7 +34,7 @@ struct MyPointsListView: View {
                 .background(Color("MainColor"))
                 .cornerRadius(10)
 
-                NavigationLink(destination: MyPointsView(speciesType: "Bighorn Sheep")) {
+                NavigationLink(destination: MyPointsView(speciesType: "Bighorn Sheep", collectionPath: "bighorn_sheep")) {
                     ButtonView(buttonText: "Bighorn Sheep")
                 }
                 .padding(.vertical)
@@ -47,7 +42,7 @@ struct MyPointsListView: View {
                 .background(Color("MainColor"))
                 .cornerRadius(10)
                 
-                NavigationLink(destination: MyPointsView(speciesType: "Bison")) {
+                NavigationLink(destination: MyPointsView(speciesType: "Bison", collectionPath: "bison")) {
                     ButtonView(buttonText: "Bison")
                 }
                 .padding(.vertical)
@@ -55,7 +50,7 @@ struct MyPointsListView: View {
                 .background(Color("MainColor"))
                 .cornerRadius(10)
                 
-                NavigationLink(destination: MyPointsView(speciesType: "Elk")) {
+                NavigationLink(destination: MyPointsView(speciesType: "Elk", collectionPath: "elk")) {
                     ButtonView(buttonText: "Elk")
                 }
                 .padding(.vertical)
@@ -63,7 +58,7 @@ struct MyPointsListView: View {
                 .background(Color("MainColor"))
                 .cornerRadius(10)
                 
-                NavigationLink(destination: MyPointsView(speciesType: "Deer")) {
+                NavigationLink(destination: MyPointsView(speciesType: "Deer", collectionPath: "deer")) {
                     ButtonView(buttonText: "Deer")
                 }
                 .padding(.vertical)
@@ -71,7 +66,7 @@ struct MyPointsListView: View {
                 .background(Color("MainColor"))
                 .cornerRadius(10)
                 
-                NavigationLink(destination: MyPointsView(speciesType: "Moose")) {
+                NavigationLink(destination: MyPointsView(speciesType: "Moose", collectionPath: "moose")) {
                     ButtonView(buttonText: "Moose")
                 }
                 .padding(.vertical)
@@ -79,7 +74,7 @@ struct MyPointsListView: View {
                 .background(Color("MainColor"))
                 .cornerRadius(10)
                 
-                NavigationLink(destination: MyPointsView(speciesType: "Mountain Goat")) {
+                NavigationLink(destination: MyPointsView(speciesType: "Mountain Goat", collectionPath: "mountain_goat")) {
                     ButtonView(buttonText: "Mountain Goat")
                 }
                 .padding(.vertical)

@@ -14,8 +14,8 @@ struct SignUpView: View {
     @State private var residentState: String = ""
     @State private var password: String = ""
     @State private var passwordVerify: String = ""
-    @State private var signUpStatusMessage = ""
-    @State private var shouldTransit = false
+    
+    @ObservedObject private var authViewModel = AuthViewModel()
     
     var states = ["Iowa", "Minnesota"]
     
@@ -80,18 +80,18 @@ struct SignUpView: View {
             
             Button {
             } label: {
-                NavigationLink(destination: MainView().navigationBarBackButtonHidden(true), isActive: $shouldTransit) {
+                NavigationLink(destination: MainView().navigationBarBackButtonHidden(true), isActive: self.$authViewModel.shouldTransitSignUp) {
                     Text("Sign Up")
                         .foregroundColor(Color.white)
                         .onTapGesture {
-                            self.signUp()
+                            self.authViewModel.signUp(name: name, username: username, email: email, residentState: residentState, password: password, passwordVerify: passwordVerify)
                         }
                 }
             }
                 .buttonStyle(.bordered)
                 .background(Color("MainColor"))
             
-            Text(self.signUpStatusMessage)
+            Text(self.authViewModel.signUpStatusMessage)
                 .foregroundColor(.red)
                 .padding()
                 .multilineTextAlignment(.center)
@@ -99,35 +99,6 @@ struct SignUpView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("BackgroundColor"))
     }
-    
-    private func signUp() {
-        
-        if (!self.password.elementsEqual(self.passwordVerify)) {
-            signUpStatusMessage = "Passwords Must Match!"
-        }
-        
-        FirebaseManager.shared.auth.createUser(withEmail: email, password: password) { result, error in
-            if let error = error {
-                print("Failed to create user:", error)
-                self.signUpStatusMessage = error.localizedDescription
-                return
-            }
-            
-            guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
-            let userData = ["email": self.email, "uid": uid, "name": self.name, "username": self.username, "residentState": self.residentState, "createdOn": Date.now, "devicedCreatedOn": "iOS"] as [String : Any]
-            
-            FirebaseManager.shared.firestore.collection("users")
-                .document(uid).setData(userData) { error in
-                    if let error = error {
-                        print(error)
-                        self.signUpStatusMessage = "Failed to create user: \(error)"
-                        return
-                    }
-                }
-            self.shouldTransit = true
-        }
-    }
-
 }
 
 struct SignUpView_Previews: PreviewProvider {

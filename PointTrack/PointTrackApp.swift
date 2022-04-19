@@ -15,6 +15,7 @@ struct PointTrackApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(SessionStore())
         }
     }
 }

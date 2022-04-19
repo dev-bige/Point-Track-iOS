@@ -10,17 +10,22 @@ import AVFoundation
 
 struct ContentView: View {
     
-    @StateObject var session = SessionStore()
+    @EnvironmentObject var session: SessionStore
+
+    func getUser () {
+        session.listen()
+    }
+    
     var body: some View {
         NavigationView {
             Group {
                 if session.session == nil {
-                    LoginView().environmentObject(session)
+                    LoginView()
                 } else {
-                    MainView().environmentObject(session)
+                    MainView()
                 }
             }
-            .environmentObject(session)
+            .onAppear(perform: getUser)
         }
     }
 }

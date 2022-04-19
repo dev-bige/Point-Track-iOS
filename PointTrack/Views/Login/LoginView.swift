@@ -49,7 +49,7 @@ struct LoginView: View {
                 } label: {
                     NavigationLink(
                         destination: MainView().navigationBarBackButtonHidden(true),
-                        isActive: self.$authViewModel.shouldTransit) {
+                        isActive: self.$authViewModel.shouldTransitLogin) {
                             Text("Login")
                                 .foregroundColor(Color.white)
                                 .onTapGesture {

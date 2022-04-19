@@ -21,8 +21,4 @@ class SessionStore: ObservableObject {
             }
         }
     }
-    
-    public static func signInUser(email: String, password: String) {
-        
-    }
 }

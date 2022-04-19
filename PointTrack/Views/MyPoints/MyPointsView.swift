@@ -9,14 +9,17 @@ import SwiftUI
 
 struct AddPointsView: View {
     @Binding var speciesType: String
+    @Binding var collectionPath: String
+    
     @EnvironmentObject var myPointsViewModel: MyPointsViewModel
     
     @State private var points = ""
     @State private var state = ""
     
-    init (speciesType: Binding<String>) {
+    init (speciesType: Binding<String>, collectionPath: Binding<String>) {
         UITableView.appearance().backgroundColor = UIColor(Color("BackgroundColor"))
         self._speciesType = speciesType
+        self._collectionPath = collectionPath
     }
         
     var body: some View {
@@ -59,7 +62,7 @@ struct AddPointsView: View {
                     Text("Add")
                         .foregroundColor(Color.white)
                         .onTapGesture {
-                            myPointsViewModel.addUserPoints(species: speciesType, points: UserPoints(state: state, points: points))
+                            myPointsViewModel.addUserPoints(species: collectionPath, points: UserPoints(state: state, points: points))
                         }
             }
                 .buttonStyle(.bordered)
@@ -75,13 +78,24 @@ struct MyPointsRow: View {
     var body: some View {
         HStack {
             Text(userPoint.state)
+                .foregroundColor(.white)
+                .fontWeight(.bold)
+            Spacer()
             Text(userPoint.points)
+                .foregroundColor(.white)
+                .fontWeight(.bold)
         }
+        .padding()
+        .background(Color("MainColor"))
+        .listRowSeparator(.hidden)
+        .listRowBackground(Color("BackgroundColor"))
+        .cornerRadius(10)
     }
 }
 
 struct MyPointsView: View {
     @State var speciesType: String
+    @State var collectionPath: String
     @State private var showingAddingPointsPopover = false
     
     @ObservedObject private var myPointsViewModel = MyPointsViewModel()
@@ -94,11 +108,11 @@ struct MyPointsView: View {
                     List(myPointsViewModel.userPoints) { userPoints in
                         MyPointsRow(userPoint: userPoints)
                     }
-                    .onAppear() {
-                        self.myPointsViewModel.getUserPoints(species: speciesType)
-                    }
+                        .background(Color("BackgroundColor"))
+                        .listStyle(PlainListStyle())
                 }
             }
+            .padding(.top)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("BackgroundColor"))
             .navigationTitle("\(speciesType) Points")
@@ -112,15 +126,18 @@ struct MyPointsView: View {
                     Image(systemName: "plus")
                 }
                 .popover(isPresented: $showingAddingPointsPopover) {
-                    AddPointsView(speciesType: $speciesType)
+                    AddPointsView(speciesType: $speciesType, collectionPath: $collectionPath)
                         .environmentObject(myPointsViewModel)
                 }
+            }
+            .onAppear() {
+                self.myPointsViewModel.getUserPoints(species: collectionPath)
             }
     }
 }
 
 struct MyPointsView_Previews: PreviewProvider {
     static var previews: some View {
-        MyPointsView(speciesType: String())
+        MyPointsView(speciesType: String(), collectionPath: String())
     }
 }

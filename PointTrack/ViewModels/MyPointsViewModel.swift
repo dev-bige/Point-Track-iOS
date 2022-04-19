@@ -16,8 +16,10 @@ class MyPointsViewModel: ObservableObject {
         
         self.userPoints.removeAll()
         
+        var userPointsTemp = [UserPoints]()
+        
         FirebaseManager.shared.firestore
-            .collection("\(species.lowercased())_points")
+            .collection("\(species)_points")
             .document(FirebaseManager.shared.auth.currentUser!.uid)
             .getDocument() { (document, error) in
                 if let document = document, document.exists {
@@ -25,21 +27,26 @@ class MyPointsViewModel: ObservableObject {
 
                     if let a = data {
                         for (key, value) in a {
-                            print(key, value)
-                            self.userPoints.append(UserPoints(state: key, points: value as! String))
+                            userPointsTemp.append(UserPoints(state: key, points: value as! String))
                         }
                     }
-  
+                                        
+                    self.userPoints = userPointsTemp.sorted(by: { (point0: UserPoints, point1: UserPoints) -> Bool in
+                        return point0 > point1
+                    })
+                    
                 } else {
                     print("No Documents Found!")
                 }
             }
+        
+
     }
     
     func addUserPoints(species: String, points: UserPoints) {
         
         FirebaseManager.shared.firestore
-            .collection("\(species.lowercased())_points")
+            .collection("\(species)_points")
             .document(FirebaseManager.shared.auth.currentUser!.uid)
             .setData([points.state : points.points], merge: true)
     }
