@@ -27,6 +27,7 @@ struct ContentView: View {
             }
             .onAppear(perform: getUser)
         }
+        .accentColor(Color("MainColor"))
     }
 }
 

@@ -63,8 +63,6 @@ struct MyBudgetView: View {
                     .padding(.leading)
                     .padding(.top)
             }
-            .navigationTitle("My Budget")
-            .navigationBarTitleDisplayMode(.inline)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("BackgroundColor"))
     }

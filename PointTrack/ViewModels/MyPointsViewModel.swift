@@ -12,6 +12,9 @@ class MyPointsViewModel: ObservableObject {
     
     @Published var userPoints = [UserPoints]()
     
+    @Published var addPointStatusMessage = ""
+    @Published var addPointsError = false
+    
     func getUserPoints(species: String) {
         
         self.userPoints.removeAll()
@@ -45,10 +48,25 @@ class MyPointsViewModel: ObservableObject {
     
     func addUserPoints(species: String, points: UserPoints) {
         
+        if (points.state.isEmpty) {
+            addPointStatusMessage = "You must specify a state!"
+            addPointsError = true
+            return
+        }
+        
+        if (points.points.isEmpty) {
+            addPointStatusMessage = "You must specify the number of points!"
+            addPointsError = true
+            return
+        }
+        
         FirebaseManager.shared.firestore
             .collection("\(species)_points")
             .document(FirebaseManager.shared.auth.currentUser!.uid)
             .setData([points.state : points.points], merge: true)
+        
+        addPointStatusMessage = "Points added succesfully!"
+        addPointsError = false
     }
 
 }

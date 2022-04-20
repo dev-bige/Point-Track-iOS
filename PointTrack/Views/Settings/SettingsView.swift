@@ -60,8 +60,6 @@ struct SettingsView: View {
                 .cornerRadius(10)
                 .padding()
             }
-            .navigationTitle("Settings")
-            .navigationBarTitleDisplayMode(.inline)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("BackgroundColor"))
     }

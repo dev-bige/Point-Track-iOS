@@ -18,13 +18,12 @@ struct ApplicationDeadlineRow: View {
                 .padding(.top)
             HStack {
                 Text(applicationDeadline.details)
-                    .multilineTextAlignment(.leading)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .foregroundColor(Color.white)
+                    .padding(.trailing)
+                Spacer()
                 Text(applicationDeadline.applicationPeriod)
-                    .multilineTextAlignment(.trailing)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .foregroundColor(Color.white)
+                    .padding(.leading)
             }
             .padding(.bottom)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -54,8 +53,6 @@ struct ApplicationDeadlineView: View {
                 .listStyle(PlainListStyle())
                 .padding()
             }
-            .navigationTitle("Application Deadlines")
-            .navigationBarTitleDisplayMode(.inline)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("BackgroundColor"))
     }

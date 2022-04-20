@@ -98,6 +98,9 @@ struct MainView: View {
                 }
         }
         .accentColor(Color("MainColor"))
+        .onAppear() {
+            UITabBar.appearance().backgroundColor = .white
+        }
     }
 }
 
