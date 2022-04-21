@@ -16,13 +16,16 @@ struct MyBudgetTagsView: View {
                     .foregroundColor(Color("MainColor"))
                     .padding()
                 
-                NavigationLink(destination: MyBudgetView()) {
-                   ButtonView(buttonText: "Add Tags")
+                NavigationLink(destination: AddTagView()) {
+                    Text("Add Tag")
+                         .foregroundColor(.white)
+                         .bold()
+                         .frame(width: 275.0, height: 30.0)
                 }
-                .padding(.vertical)
                 .buttonStyle(.bordered)
                 .background(Color("MainColor"))
                 .cornerRadius(10)
+                .padding()
             }
             .navigationTitle("My Tags")
             .navigationBarTitleDisplayMode(.inline)

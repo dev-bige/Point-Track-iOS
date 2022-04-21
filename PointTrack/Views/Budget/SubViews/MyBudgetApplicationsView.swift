@@ -16,13 +16,16 @@ struct MyBudgetApplicationsView: View {
                     .foregroundColor(Color("MainColor"))
                     .padding()
                 
-                NavigationLink(destination: MyBudgetView()) {
-                   ButtonView(buttonText: "Add Application")
+                NavigationLink(destination: AddApplicationView()) {
+                    Text("Add Application")
+                         .foregroundColor(.white)
+                         .bold()
+                         .frame(width: 275.0, height: 30.0)
                 }
-                .padding(.vertical)
                 .buttonStyle(.bordered)
                 .background(Color("MainColor"))
                 .cornerRadius(10)
+                .padding()
             }
             .navigationTitle("My Applications")
             .navigationBarTitleDisplayMode(.inline)

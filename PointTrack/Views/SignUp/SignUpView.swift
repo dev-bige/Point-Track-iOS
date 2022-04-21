@@ -15,6 +15,8 @@ struct SignUpView: View {
     @State private var password: String = ""
     @State private var passwordVerify: String = ""
     
+    private var reference = Reference()
+    
     @ObservedObject private var authViewModel = AuthViewModel()
     
     var states = ["Iowa", "Minnesota"]
@@ -54,13 +56,19 @@ struct SignUpView: View {
                 .padding([.leading, .bottom, .trailing])
                 .keyboardType(.emailAddress)
             
-            TextField(
-                "Resident State",
-                text: $residentState
-            )
-                .textFieldStyle(.roundedBorder)
-                .border(Color("MainColor"))
-                .padding([.leading, .bottom, .trailing])
+            Picker("Resident State:", selection: $residentState) {
+                ForEach(reference.residentStates, id: \.self) {
+                    Text($0)
+                }
+            }
+            
+//            TextField(
+//                "Resident State",
+//                text: $residentState
+//            )
+//                .textFieldStyle(.roundedBorder)
+//                .border(Color("MainColor"))
+//                .padding([.leading, .bottom, .trailing])
             
             SecureField(
                 "Password",

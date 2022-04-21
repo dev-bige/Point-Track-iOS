@@ -44,6 +44,13 @@
 		A8A69402280670F600988F70 /* UserPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A69401280670F600988F70 /* UserPoints.swift */; };
 		A8A69404280C775300988F70 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A69403280C775300988F70 /* AuthViewModel.swift */; };
 		A8A69409280FB24C00988F70 /* AddPointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A69408280FB24C00988F70 /* AddPointsView.swift */; };
+		A8A6940D2810378000988F70 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6940C2810378000988F70 /* EditProfileView.swift */; };
+		A8A6940F2810379000988F70 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6940E2810379000988F70 /* ResetPasswordView.swift */; };
+		A8A694112810379E00988F70 /* SendFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A694102810379E00988F70 /* SendFeedbackView.swift */; };
+		A8A69415281041D000988F70 /* DeadlineReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A69414281041D000988F70 /* DeadlineReminderView.swift */; };
+		A8A6941728105B5A00988F70 /* AddTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6941628105B5A00988F70 /* AddTagView.swift */; };
+		A8A6941928105B6C00988F70 /* AddApplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6941828105B6C00988F70 /* AddApplicationView.swift */; };
+		A8A6941B2810E08B00988F70 /* Reference.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6941A2810E08B00988F70 /* Reference.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +104,13 @@
 		A8A69401280670F600988F70 /* UserPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPoints.swift; sourceTree = "<group>"; };
 		A8A69403280C775300988F70 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		A8A69408280FB24C00988F70 /* AddPointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPointsView.swift; sourceTree = "<group>"; };
+		A8A6940C2810378000988F70 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		A8A6940E2810379000988F70 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
+		A8A694102810379E00988F70 /* SendFeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFeedbackView.swift; sourceTree = "<group>"; };
+		A8A69414281041D000988F70 /* DeadlineReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlineReminderView.swift; sourceTree = "<group>"; };
+		A8A6941628105B5A00988F70 /* AddTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTagView.swift; sourceTree = "<group>"; };
+		A8A6941828105B6C00988F70 /* AddApplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddApplicationView.swift; sourceTree = "<group>"; };
+		A8A6941A2810E08B00988F70 /* Reference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reference.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,9 +219,8 @@
 		A88489FE27FD24B400F3C55B /* MyPoints */ = {
 			isa = PBXGroup;
 			children = (
+				A8A6940B2810375C00988F70 /* SubViews */,
 				A895B2C027EA86D0006116B9 /* MyPointsListView.swift */,
-				A88489FF27FD24CB00F3C55B /* MyPointsView.swift */,
-				A8A69408280FB24C00988F70 /* AddPointsView.swift */,
 			);
 			path = MyPoints;
 			sourceTree = "<group>";
@@ -215,6 +228,7 @@
 		A8848A0127FD2A8B00F3C55B /* Deadline */ = {
 			isa = PBXGroup;
 			children = (
+				A8A69413281041BF00988F70 /* SubViews */,
 				A895B2C227EA8828006116B9 /* ApplicationDeadlineView.swift */,
 			);
 			path = Deadline;
@@ -223,9 +237,8 @@
 		A8848A0227FD2A9200F3C55B /* Budget */ = {
 			isa = PBXGroup;
 			children = (
+				A8A69412281037FA00988F70 /* SubViews */,
 				A895B2C427EA8849006116B9 /* MyBudgetView.swift */,
-				A8848A0F2800B2B800F3C55B /* MyBudgetApplicationsView.swift */,
-				A8848A112800B2C300F3C55B /* MyBudgetTagsView.swift */,
 			);
 			path = Budget;
 			sourceTree = "<group>";
@@ -241,6 +254,7 @@
 		A8848A0427FD2AB500F3C55B /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				A8A6940A2810375200988F70 /* SubViews */,
 				A895B2C827EAA559006116B9 /* SettingsView.swift */,
 			);
 			path = Settings;
@@ -261,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				A8848A0727FD2BB700F3C55B /* ButtonView.swift */,
+				A8A6941A2810E08B00988F70 /* Reference.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -312,6 +327,44 @@
 				A8859A3D27DED13B0067436A /* ForgotPasswordView.swift */,
 			);
 			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		A8A6940A2810375200988F70 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				A8A6940C2810378000988F70 /* EditProfileView.swift */,
+				A8A6940E2810379000988F70 /* ResetPasswordView.swift */,
+				A8A694102810379E00988F70 /* SendFeedbackView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		A8A6940B2810375C00988F70 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				A88489FF27FD24CB00F3C55B /* MyPointsView.swift */,
+				A8A69408280FB24C00988F70 /* AddPointsView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		A8A69412281037FA00988F70 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				A8848A0F2800B2B800F3C55B /* MyBudgetApplicationsView.swift */,
+				A8848A112800B2C300F3C55B /* MyBudgetTagsView.swift */,
+				A8A6941628105B5A00988F70 /* AddTagView.swift */,
+				A8A6941828105B6C00988F70 /* AddApplicationView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		A8A69413281041BF00988F70 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				A8A69414281041D000988F70 /* DeadlineReminderView.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -461,20 +514,27 @@
 				A8A69402280670F600988F70 /* UserPoints.swift in Sources */,
 				A895B2C527EA8849006116B9 /* MyBudgetView.swift in Sources */,
 				A8A693FC280647FD00988F70 /* NewsPostViewModel.swift in Sources */,
+				A8A6941728105B5A00988F70 /* AddTagView.swift in Sources */,
 				A895B2C127EA86D0006116B9 /* MyPointsListView.swift in Sources */,
 				A8018F2927E2C77200C80BFF /* MainView.swift in Sources */,
 				A8018F2B27E79D1B00C80BFF /* FirebaseManager.swift in Sources */,
 				A8859A3A27DE518C0067436A /* LoginView.swift in Sources */,
 				A8848A0E2800A1A500F3C55B /* ApplicationDeadline.swift in Sources */,
+				A8A694112810379E00988F70 /* SendFeedbackView.swift in Sources */,
 				A8848A0827FD2BB700F3C55B /* ButtonView.swift in Sources */,
 				A895B2BD27E972B9006116B9 /* SessionStore.swift in Sources */,
 				A80C2E3127DE4EEB006892AA /* ContentView.swift in Sources */,
 				A8A693FE280650F400988F70 /* ApplicationDeadlineViewModel.swift in Sources */,
 				A895B2C327EA8828006116B9 /* ApplicationDeadlineView.swift in Sources */,
 				A8848A122800B2C300F3C55B /* MyBudgetTagsView.swift in Sources */,
+				A8A69415281041D000988F70 /* DeadlineReminderView.swift in Sources */,
+				A8A6941B2810E08B00988F70 /* Reference.swift in Sources */,
+				A8A6940D2810378000988F70 /* EditProfileView.swift in Sources */,
+				A8A6941928105B6C00988F70 /* AddApplicationView.swift in Sources */,
 				A895B2C927EAA559006116B9 /* SettingsView.swift in Sources */,
 				A8848A102800B2B800F3C55B /* MyBudgetApplicationsView.swift in Sources */,
 				A8A69404280C775300988F70 /* AuthViewModel.swift in Sources */,
+				A8A6940F2810379000988F70 /* ResetPasswordView.swift in Sources */,
 				A8848A14280529D500F3C55B /* NewsPost.swift in Sources */,
 				A8859A3E27DED13B0067436A /* ForgotPasswordView.swift in Sources */,
 				A80C2E2F27DE4EEB006892AA /* PointTrackApp.swift in Sources */,

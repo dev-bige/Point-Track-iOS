@@ -13,7 +13,7 @@ struct SettingsView: View {
     
     var body: some View {
             VStack {
-                NavigationLink(destination: MyBudgetApplicationsView()) {
+                NavigationLink(destination: EditProfileView()) {
                    Text("Edit Profile")
                         .foregroundColor(.white)
                         .bold()
@@ -24,7 +24,7 @@ struct SettingsView: View {
                 .cornerRadius(10)
                 .padding()
                 
-                NavigationLink(destination: MyBudgetApplicationsView()) {
+                NavigationLink(destination: ResetPasswordView()) {
                     Text("Reset Password")
                         .foregroundColor(.white)
                         .bold()
@@ -35,7 +35,7 @@ struct SettingsView: View {
                 .cornerRadius(10)
                 .padding()
                 
-                NavigationLink(destination: MyBudgetApplicationsView()) {
+                NavigationLink(destination: SendFeedbackView()) {
                     Text("Send Feedback")
                         .foregroundColor(.white)
                         .bold()

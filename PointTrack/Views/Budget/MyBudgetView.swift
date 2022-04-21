@@ -17,12 +17,15 @@ struct MyBudgetView: View {
                     .padding()
                 
                 NavigationLink(destination: MyBudgetApplicationsView()) {
-                   ButtonView(buttonText: "Show Applications")
+                    Text("Show Applications")
+                         .foregroundColor(.white)
+                         .bold()
+                         .frame(width: 275.0, height: 30.0)
                 }
-                .padding(.vertical)
                 .buttonStyle(.bordered)
                 .background(Color("MainColor"))
                 .cornerRadius(10)
+                .padding()
                 
                 Text("Total Applying Cost: $0")
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -36,12 +39,15 @@ struct MyBudgetView: View {
                     .padding()
                 
                 NavigationLink(destination: MyBudgetTagsView()) {
-                   ButtonView(buttonText: "Show Tags")
+                    Text("Show Tags")
+                         .foregroundColor(.white)
+                         .bold()
+                         .frame(width: 275.0, height: 30.0)
                 }
-                .padding(.vertical)
                 .buttonStyle(.bordered)
                 .background(Color("MainColor"))
                 .cornerRadius(10)
+                .padding()
                 
                 Text("Total Tag Cost: $0")
                     .frame(maxWidth: .infinity, alignment: .leading)

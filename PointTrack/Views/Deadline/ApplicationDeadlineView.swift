@@ -20,6 +20,7 @@ struct ApplicationDeadlineRow: View {
                 Text(applicationDeadline.details)
                     .foregroundColor(Color.white)
                     .padding(.trailing)
+                    .lineLimit(nil)
                 Spacer()
                 Text(applicationDeadline.applicationPeriod)
                     .foregroundColor(Color.white)
@@ -49,6 +50,7 @@ struct ApplicationDeadlineView: View {
                 .onAppear() {
                     applicationDeadlineViewModel.getAllDeadlines()
                 }
+                .lineLimit(nil)
                 .background(Color("BackgroundColor"))
                 .listStyle(PlainListStyle())
                 .padding()
