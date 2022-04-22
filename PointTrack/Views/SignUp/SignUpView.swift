@@ -62,14 +62,6 @@ struct SignUpView: View {
                 }
             }
             
-//            TextField(
-//                "Resident State",
-//                text: $residentState
-//            )
-//                .textFieldStyle(.roundedBorder)
-//                .border(Color("MainColor"))
-//                .padding([.leading, .bottom, .trailing])
-            
             SecureField(
                 "Password",
                 text: $password

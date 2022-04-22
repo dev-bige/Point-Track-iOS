@@ -14,6 +14,8 @@ struct EditProfileView: View {
     @State private var email = ""
     @State private var residentState = ""
     
+    @ObservedObject private var authViewModel = AuthViewModel()
+    
     var body: some View {
         VStack {
             Form {
@@ -64,8 +66,28 @@ struct EditProfileView: View {
                     )
                     .keyboardType(.default)
                 }
+                
+                Section {
+                    Button {
+                    } label: {
+                            Text("Update")
+                                .foregroundColor(Color.white)
+                                .onTapGesture {
+                                    authViewModel.updateProfile()
+                                }
+                    }
+                        .buttonStyle(.bordered)
+                        .cornerRadius(10)
+                        .background(Color("MainColor"))
+                        .padding()
+                }
+                .frame(maxWidth: .infinity)
+                .multilineTextAlignment(.center)
+                .listRowBackground(Color("BackgroundColor"))
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color("BackgroundColor"))
     }
 }
 

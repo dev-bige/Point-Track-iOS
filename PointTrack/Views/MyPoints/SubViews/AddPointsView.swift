@@ -17,9 +17,7 @@ struct AddPointsView: View {
     @State private var state = ""
     
     private var reference = Reference()
-    
-    let states = ["Iowa", "Minnesota", "Colorado"]
-    
+        
     init (speciesType: Binding<String>, collectionPath: Binding<String>) {
         UITableView.appearance().backgroundColor = UIColor(Color("BackgroundColor"))
         self._speciesType = speciesType
@@ -45,11 +43,6 @@ struct AddPointsView: View {
                             Text($0)
                         }
                     }
-//                    TextField(
-//                        "State",
-//                        text: $state
-//                    )
-//                    .keyboardType(.default)
                 }
                 
                 Section(header:

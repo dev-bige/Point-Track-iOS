@@ -112,7 +112,6 @@ struct MyPointsRow: View {
     
     @EnvironmentObject var myPointsViewModel: MyPointsViewModel
 
-    
     var body: some View {
         
         Button(action: {

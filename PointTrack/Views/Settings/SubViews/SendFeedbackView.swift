@@ -41,6 +41,8 @@ struct SendFeedbackView: View {
                 }
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color("BackgroundColor"))
     }
 }
 

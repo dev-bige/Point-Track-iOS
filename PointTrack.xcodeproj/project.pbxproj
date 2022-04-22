@@ -51,6 +51,12 @@
 		A8A6941728105B5A00988F70 /* AddTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6941628105B5A00988F70 /* AddTagView.swift */; };
 		A8A6941928105B6C00988F70 /* AddApplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6941828105B6C00988F70 /* AddApplicationView.swift */; };
 		A8A6941B2810E08B00988F70 /* Reference.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6941A2810E08B00988F70 /* Reference.swift */; };
+		A8A6941D281248FE00988F70 /* BudgetApplicationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6941C281248FE00988F70 /* BudgetApplicationsViewModel.swift */; };
+		A8A6941F2812490B00988F70 /* BudgetTagsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6941E2812490B00988F70 /* BudgetTagsViewModel.swift */; };
+		A8A69425281249DD00988F70 /* UserApplications.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A69424281249DD00988F70 /* UserApplications.swift */; };
+		A8A6942728124A0800988F70 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6942628124A0800988F70 /* Application.swift */; };
+		A8A6942928124D7C00988F70 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6942828124D7C00988F70 /* Tag.swift */; };
+		A8A6942B28124D8900988F70 /* UserTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6942A28124D8900988F70 /* UserTags.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +117,12 @@
 		A8A6941628105B5A00988F70 /* AddTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTagView.swift; sourceTree = "<group>"; };
 		A8A6941828105B6C00988F70 /* AddApplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddApplicationView.swift; sourceTree = "<group>"; };
 		A8A6941A2810E08B00988F70 /* Reference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reference.swift; sourceTree = "<group>"; };
+		A8A6941C281248FE00988F70 /* BudgetApplicationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetApplicationsViewModel.swift; sourceTree = "<group>"; };
+		A8A6941E2812490B00988F70 /* BudgetTagsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTagsViewModel.swift; sourceTree = "<group>"; };
+		A8A69424281249DD00988F70 /* UserApplications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApplications.swift; sourceTree = "<group>"; };
+		A8A6942628124A0800988F70 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
+		A8A6942828124D7C00988F70 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		A8A6942A28124D8900988F70 /* UserTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTags.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +277,8 @@
 			children = (
 				A8A693FD280650F400988F70 /* ApplicationDeadlineViewModel.swift */,
 				A8A69403280C775300988F70 /* AuthViewModel.swift */,
+				A8A6941C281248FE00988F70 /* BudgetApplicationsViewModel.swift */,
+				A8A6941E2812490B00988F70 /* BudgetTagsViewModel.swift */,
 				A8A693FF2806708D00988F70 /* MyPointsViewModel.swift */,
 				A8A693FB280647FD00988F70 /* NewsPostViewModel.swift */,
 			);
@@ -283,9 +297,13 @@
 		A8859A3727DE516D0067436A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A8A6942628124A0800988F70 /* Application.swift */,
 				A8848A0D2800A1A500F3C55B /* ApplicationDeadline.swift */,
 				A8848A13280529D500F3C55B /* NewsPost.swift */,
+				A8A6942828124D7C00988F70 /* Tag.swift */,
+				A8A69424281249DD00988F70 /* UserApplications.swift */,
 				A8A69401280670F600988F70 /* UserPoints.swift */,
+				A8A6942A28124D8900988F70 /* UserTags.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -525,13 +543,17 @@
 				A895B2BD27E972B9006116B9 /* SessionStore.swift in Sources */,
 				A80C2E3127DE4EEB006892AA /* ContentView.swift in Sources */,
 				A8A693FE280650F400988F70 /* ApplicationDeadlineViewModel.swift in Sources */,
+				A8A6942728124A0800988F70 /* Application.swift in Sources */,
 				A895B2C327EA8828006116B9 /* ApplicationDeadlineView.swift in Sources */,
 				A8848A122800B2C300F3C55B /* MyBudgetTagsView.swift in Sources */,
 				A8A69415281041D000988F70 /* DeadlineReminderView.swift in Sources */,
 				A8A6941B2810E08B00988F70 /* Reference.swift in Sources */,
+				A8A6942B28124D8900988F70 /* UserTags.swift in Sources */,
 				A8A6940D2810378000988F70 /* EditProfileView.swift in Sources */,
 				A8A6941928105B6C00988F70 /* AddApplicationView.swift in Sources */,
 				A895B2C927EAA559006116B9 /* SettingsView.swift in Sources */,
+				A8A6941F2812490B00988F70 /* BudgetTagsViewModel.swift in Sources */,
+				A8A6942928124D7C00988F70 /* Tag.swift in Sources */,
 				A8848A102800B2B800F3C55B /* MyBudgetApplicationsView.swift in Sources */,
 				A8A69404280C775300988F70 /* AuthViewModel.swift in Sources */,
 				A8A6940F2810379000988F70 /* ResetPasswordView.swift in Sources */,
@@ -540,7 +562,9 @@
 				A80C2E2F27DE4EEB006892AA /* PointTrackApp.swift in Sources */,
 				A8848A0027FD24CB00F3C55B /* MyPointsView.swift in Sources */,
 				A8A694002806708D00988F70 /* MyPointsViewModel.swift in Sources */,
+				A8A6941D281248FE00988F70 /* BudgetApplicationsViewModel.swift in Sources */,
 				A8A69409280FB24C00988F70 /* AddPointsView.swift in Sources */,
+				A8A69425281249DD00988F70 /* UserApplications.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

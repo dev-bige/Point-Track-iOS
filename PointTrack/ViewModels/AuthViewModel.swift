@@ -66,6 +66,10 @@ class AuthViewModel: ObservableObject {
         }
     }
     
+    func updateProfile() {
+        
+    }
+    
     func signOut() {
         do {
             print("User logged out")
