@@ -24,6 +24,8 @@
 		A80C2E4027DE4EEC006892AA /* PointTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C2E3F27DE4EEC006892AA /* PointTrackTests.swift */; };
 		A80C2E4A27DE4EEC006892AA /* PointTrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C2E4927DE4EEC006892AA /* PointTrackUITests.swift */; };
 		A80C2E4C27DE4EEC006892AA /* PointTrackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C2E4B27DE4EEC006892AA /* PointTrackUITestsLaunchTests.swift */; };
+		A85F5A73286F7071009ED78F /* DeadlineReminderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F5A72286F7071009ED78F /* DeadlineReminderViewModel.swift */; };
+		A85F5A75286F70C2009ED78F /* DeadlinReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F5A74286F70C2009ED78F /* DeadlinReminder.swift */; };
 		A8848A0027FD24CB00F3C55B /* MyPointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88489FF27FD24CB00F3C55B /* MyPointsView.swift */; };
 		A8848A0827FD2BB700F3C55B /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8848A0727FD2BB700F3C55B /* ButtonView.swift */; };
 		A8848A0E2800A1A500F3C55B /* ApplicationDeadline.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8848A0D2800A1A500F3C55B /* ApplicationDeadline.swift */; };
@@ -90,6 +92,8 @@
 		A80C2E4527DE4EEC006892AA /* PointTrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PointTrackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A80C2E4927DE4EEC006892AA /* PointTrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointTrackUITests.swift; sourceTree = "<group>"; };
 		A80C2E4B27DE4EEC006892AA /* PointTrackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointTrackUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A85F5A72286F7071009ED78F /* DeadlineReminderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlineReminderViewModel.swift; sourceTree = "<group>"; };
+		A85F5A74286F70C2009ED78F /* DeadlinReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlinReminder.swift; sourceTree = "<group>"; };
 		A88489FF27FD24CB00F3C55B /* MyPointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPointsView.swift; sourceTree = "<group>"; };
 		A8848A0727FD2BB700F3C55B /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		A8848A0D2800A1A500F3C55B /* ApplicationDeadline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDeadline.swift; sourceTree = "<group>"; };
@@ -281,6 +285,7 @@
 				A8A6941E2812490B00988F70 /* BudgetTagsViewModel.swift */,
 				A8A693FF2806708D00988F70 /* MyPointsViewModel.swift */,
 				A8A693FB280647FD00988F70 /* NewsPostViewModel.swift */,
+				A85F5A72286F7071009ED78F /* DeadlineReminderViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -304,6 +309,7 @@
 				A8A69424281249DD00988F70 /* UserApplications.swift */,
 				A8A69401280670F600988F70 /* UserPoints.swift */,
 				A8A6942A28124D8900988F70 /* UserTags.swift */,
+				A85F5A74286F70C2009ED78F /* DeadlinReminder.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -533,6 +539,7 @@
 				A895B2C527EA8849006116B9 /* MyBudgetView.swift in Sources */,
 				A8A693FC280647FD00988F70 /* NewsPostViewModel.swift in Sources */,
 				A8A6941728105B5A00988F70 /* AddTagView.swift in Sources */,
+				A85F5A75286F70C2009ED78F /* DeadlinReminder.swift in Sources */,
 				A895B2C127EA86D0006116B9 /* MyPointsListView.swift in Sources */,
 				A8018F2927E2C77200C80BFF /* MainView.swift in Sources */,
 				A8018F2B27E79D1B00C80BFF /* FirebaseManager.swift in Sources */,
@@ -556,6 +563,7 @@
 				A8A6942928124D7C00988F70 /* Tag.swift in Sources */,
 				A8848A102800B2B800F3C55B /* MyBudgetApplicationsView.swift in Sources */,
 				A8A69404280C775300988F70 /* AuthViewModel.swift in Sources */,
+				A85F5A73286F7071009ED78F /* DeadlineReminderViewModel.swift in Sources */,
 				A8A6940F2810379000988F70 /* ResetPasswordView.swift in Sources */,
 				A8848A14280529D500F3C55B /* NewsPost.swift in Sources */,
 				A8859A3E27DED13B0067436A /* ForgotPasswordView.swift in Sources */,

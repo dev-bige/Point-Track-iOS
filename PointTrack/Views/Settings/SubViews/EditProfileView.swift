@@ -16,8 +16,19 @@ struct EditProfileView: View {
     
     @ObservedObject private var authViewModel = AuthViewModel()
     
+    init() {
+        UITableView.appearance().backgroundColor = UIColor(Color("BackgroundColor"))
+    }
+    
     var body: some View {
         VStack {
+            
+            Text("Edit Profile")
+                .fontWeight(.bold)
+                .foregroundColor(Color("MainColor"))
+                .font(.title)
+                .padding()
+            
             Form {
                 Section(header:
                             Text("Edit Name:")
@@ -86,7 +97,6 @@ struct EditProfileView: View {
                 .listRowBackground(Color("BackgroundColor"))
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("BackgroundColor"))
     }
 }

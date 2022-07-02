@@ -11,10 +11,12 @@ class ApplicationDeadline: Identifiable {
     var title: String
     var applicationPeriod: String
     var details: String
+    var applicationLink: String
     
-    init(title: String, applicationPeriod: String, details: String) {
+    init(title: String, applicationPeriod: String, details: String, applicationLink: String) {
         self.title = title
         self.applicationPeriod = applicationPeriod
         self.details = details
+        self.applicationLink = applicationLink
     }
 }
