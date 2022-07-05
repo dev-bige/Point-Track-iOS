@@ -11,9 +11,9 @@ class Tag: Identifiable {
     
     var state: String
     var species: String
-    var cost: UInt64
+    var cost: Int64
     
-    init(state: String, species: String, cost: UInt64) {
+    init(state: String, species: String, cost: Int64) {
         self.state = state
         self.species = species
         self.cost = cost

@@ -11,6 +11,7 @@ import AVFoundation
 struct ContentView: View {
     
     @EnvironmentObject var session: SessionStore
+    @EnvironmentObject var localNotificationManger: LocalNotificationMangager
 
     func getUser () {
         session.listen()
@@ -28,11 +29,15 @@ struct ContentView: View {
             .onAppear(perform: getUser)
         }
         .accentColor(Color("MainColor"))
+        .task {
+            try? await localNotificationManger.requestAuthorization()
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(LocalNotificationMangager())
     }
 }

@@ -35,10 +35,34 @@ struct SendFeedbackView: View {
                 ) {
                     TextField(
                         "Enter message",
-                        text: $subject
+                        text: $message
                     )
                     .keyboardType(.default)
                 }
+                
+                Section {
+                    Button {
+                    } label: {
+                        Text("Send Feedback")
+                            .foregroundColor(Color.white)
+                            .onTapGesture {
+                                let mailToString = "pointtracksupport@gmail.com?subject=" + self.subject + "&body=" + (self.message
+                                    .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "error")
+                                
+                                let mailtoUrl = URL(string: mailToString)!
+                                if UIApplication.shared.canOpenURL(mailtoUrl) {
+                                        UIApplication.shared.open(mailtoUrl, options: [:])
+                                }
+                            }
+                    }
+                    .buttonStyle(.bordered)
+                    .background(Color("MainColor"))
+                    .cornerRadius(10)
+                    .padding()
+                }
+                .frame(maxWidth: .infinity)
+                .multilineTextAlignment(.center)
+                .listRowBackground(Color("BackgroundColor"))
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

@@ -40,13 +40,6 @@ struct MyBudgetApplicationsView: View {
                 .background(Color("MainColor"))
                 .cornerRadius(10)
                 .padding()
-                
-//                List(myPointsViewModel.userPoints) { userPoints in
-//                    MyPointsRow(userPoint: userPoints, speciesType: speciesType, collectionPath: collectionPath).environmentObject(myPointsViewModel)
-//                }
-//                    .background(Color("BackgroundColor"))
-//                    .listStyle(PlainListStyle())
-//                    .padding(.bottom)
             }
             .navigationTitle("My Applications")
             .navigationBarTitleDisplayMode(.inline)

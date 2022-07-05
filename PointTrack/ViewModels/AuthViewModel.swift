@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Firebase
 
 class AuthViewModel: ObservableObject {
     
@@ -16,6 +17,10 @@ class AuthViewModel: ObservableObject {
     @Published var signUpStatusMessage = ""
     
     @Published var forgetPasswordStatusMessage = ""
+    
+    @Published var updateProfileStatusMessage = ""
+    
+    @Published var currentUserObj: UserObj = UserObj(email: "", name: "", residentState: "", username: "")
     
     func login(email: String, password: String) {
         FirebaseManager.shared.auth.signIn(withEmail: email, password: password) { result, error in
@@ -66,8 +71,61 @@ class AuthViewModel: ObservableObject {
         }
     }
     
-    func updateProfile() {
+    func updateProfile(name: String, username: String, residentState: String) {
         
+        self.updateProfileStatusMessage = ""
+        
+        if (name.isEmpty && username.isEmpty && residentState.isEmpty) {
+            updateProfileStatusMessage = "Please update one of the fields above."
+        } else {
+            let docRef = FirebaseManager.shared.firestore.collection("users").document(FirebaseManager.shared.auth.currentUser!.uid)
+            
+            docRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    let data = document.data()
+                    
+                    let dataName = data?["name"] as? String ?? ""
+                    let dataUserName = data?["username"] as? String ?? ""
+                    let dataResidentState = data?["residentState"] as? String ?? ""
+                    
+                    if (!name.isEmpty && !name.elementsEqual(dataName)) {
+                        docRef.updateData(["name": name])
+                    }
+                    
+                    if (!username.isEmpty && !username.elementsEqual(dataUserName)) {
+                        docRef.updateData(["username": username])
+                    }
+                    
+                    if (!residentState.isEmpty && !residentState.elementsEqual(dataResidentState)) {
+                        docRef.updateData(["residentState": residentState])
+                    }
+                } else {
+                    print("Document does not exist")
+                }
+            }
+            
+            updateProfileStatusMessage = "Profile updated succesfully!"
+        }
+    }
+    
+    func getCurrentUserObj() {
+        let docRef = FirebaseManager.shared.firestore.collection("users").document(FirebaseManager.shared.auth.currentUser!.uid)
+
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let data = document.data()
+                
+                let dataName = data?["name"] as? String ?? ""
+                let dataEmail = data?["email"] as? String ?? ""
+                let dataUserName = data?["username"] as? String ?? ""
+                let dataResidentState = data?["residentState"] as? String ?? ""
+                
+                
+                self.currentUserObj = UserObj(email: dataEmail, name: dataName, residentState: dataResidentState, username: dataUserName)
+            } else {
+                print("Document does not exist")
+            }
+        }
     }
     
     func signOut() {

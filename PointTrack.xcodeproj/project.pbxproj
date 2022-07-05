@@ -26,6 +26,9 @@
 		A80C2E4C27DE4EEC006892AA /* PointTrackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C2E4B27DE4EEC006892AA /* PointTrackUITestsLaunchTests.swift */; };
 		A85F5A73286F7071009ED78F /* DeadlineReminderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F5A72286F7071009ED78F /* DeadlineReminderViewModel.swift */; };
 		A85F5A75286F70C2009ED78F /* DeadlinReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F5A74286F70C2009ED78F /* DeadlinReminder.swift */; };
+		A85F5A782871D85C009ED78F /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F5A772871D85C009ED78F /* LocalNotificationManager.swift */; };
+		A85F5A7A28732DEB009ED78F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F5A7928732DEB009ED78F /* User.swift */; };
+		A85F5A7C28733A7D009ED78F /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F5A7B28733A7D009ED78F /* MyProfileView.swift */; };
 		A8848A0027FD24CB00F3C55B /* MyPointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88489FF27FD24CB00F3C55B /* MyPointsView.swift */; };
 		A8848A0827FD2BB700F3C55B /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8848A0727FD2BB700F3C55B /* ButtonView.swift */; };
 		A8848A0E2800A1A500F3C55B /* ApplicationDeadline.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8848A0D2800A1A500F3C55B /* ApplicationDeadline.swift */; };
@@ -94,6 +97,9 @@
 		A80C2E4B27DE4EEC006892AA /* PointTrackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointTrackUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A85F5A72286F7071009ED78F /* DeadlineReminderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlineReminderViewModel.swift; sourceTree = "<group>"; };
 		A85F5A74286F70C2009ED78F /* DeadlinReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlinReminder.swift; sourceTree = "<group>"; };
+		A85F5A772871D85C009ED78F /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
+		A85F5A7928732DEB009ED78F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A85F5A7B28733A7D009ED78F /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		A88489FF27FD24CB00F3C55B /* MyPointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPointsView.swift; sourceTree = "<group>"; };
 		A8848A0727FD2BB700F3C55B /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		A8848A0D2800A1A500F3C55B /* ApplicationDeadline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDeadline.swift; sourceTree = "<group>"; };
@@ -198,6 +204,7 @@
 				A8859A3727DE516D0067436A /* Models */,
 				A8018F1627E1872700C80BFF /* Repoistory */,
 				A8859A3627DE51660067436A /* Resources */,
+				A85F5A762871D832009ED78F /* Notifications */,
 				A80C2E2E27DE4EEB006892AA /* PointTrackApp.swift */,
 				A80C2E3027DE4EEB006892AA /* ContentView.swift */,
 				A80C2E3227DE4EEC006892AA /* Assets.xcassets */,
@@ -230,6 +237,14 @@
 				A80C2E4B27DE4EEC006892AA /* PointTrackUITestsLaunchTests.swift */,
 			);
 			path = PointTrackUITests;
+			sourceTree = "<group>";
+		};
+		A85F5A762871D832009ED78F /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				A85F5A772871D85C009ED78F /* LocalNotificationManager.swift */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 		A88489FE27FD24B400F3C55B /* MyPoints */ = {
@@ -310,6 +325,7 @@
 				A8A69401280670F600988F70 /* UserPoints.swift */,
 				A8A6942A28124D8900988F70 /* UserTags.swift */,
 				A85F5A74286F70C2009ED78F /* DeadlinReminder.swift */,
+				A85F5A7928732DEB009ED78F /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -359,6 +375,7 @@
 				A8A6940C2810378000988F70 /* EditProfileView.swift */,
 				A8A6940E2810379000988F70 /* ResetPasswordView.swift */,
 				A8A694102810379E00988F70 /* SendFeedbackView.swift */,
+				A85F5A7B28733A7D009ED78F /* MyProfileView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -538,6 +555,7 @@
 				A8A69402280670F600988F70 /* UserPoints.swift in Sources */,
 				A895B2C527EA8849006116B9 /* MyBudgetView.swift in Sources */,
 				A8A693FC280647FD00988F70 /* NewsPostViewModel.swift in Sources */,
+				A85F5A7C28733A7D009ED78F /* MyProfileView.swift in Sources */,
 				A8A6941728105B5A00988F70 /* AddTagView.swift in Sources */,
 				A85F5A75286F70C2009ED78F /* DeadlinReminder.swift in Sources */,
 				A895B2C127EA86D0006116B9 /* MyPointsListView.swift in Sources */,
@@ -552,10 +570,12 @@
 				A8A693FE280650F400988F70 /* ApplicationDeadlineViewModel.swift in Sources */,
 				A8A6942728124A0800988F70 /* Application.swift in Sources */,
 				A895B2C327EA8828006116B9 /* ApplicationDeadlineView.swift in Sources */,
+				A85F5A7A28732DEB009ED78F /* User.swift in Sources */,
 				A8848A122800B2C300F3C55B /* MyBudgetTagsView.swift in Sources */,
 				A8A69415281041D000988F70 /* DeadlineReminderView.swift in Sources */,
 				A8A6941B2810E08B00988F70 /* Reference.swift in Sources */,
 				A8A6942B28124D8900988F70 /* UserTags.swift in Sources */,
+				A85F5A782871D85C009ED78F /* LocalNotificationManager.swift in Sources */,
 				A8A6940D2810378000988F70 /* EditProfileView.swift in Sources */,
 				A8A6941928105B6C00988F70 /* AddApplicationView.swift in Sources */,
 				A895B2C927EAA559006116B9 /* SettingsView.swift in Sources */,

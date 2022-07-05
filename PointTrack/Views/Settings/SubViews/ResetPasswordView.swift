@@ -16,10 +16,12 @@ struct ResetPasswordView: View {
     var body: some View {
         VStack {
             Text("Would you like to send a password reset email?")
+                .multilineTextAlignment(.center)
+                .padding()
             
             Button {
             } label: {
-                Text("Send")
+                Text("Send Reset Email")
                     .foregroundColor(Color.white)
                     .onTapGesture {
                         self.authViewModel.sendPasswordResetEmail(email: email)
@@ -27,6 +29,8 @@ struct ResetPasswordView: View {
             }
                 .buttonStyle(.bordered)
                 .background(Color("MainColor"))
+                .cornerRadius(10)
+                .padding()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("BackgroundColor"))

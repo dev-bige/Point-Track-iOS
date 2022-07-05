@@ -7,100 +7,50 @@
 
 import SwiftUI
 
+struct SpeciesItem: Identifiable {
+    let id = UUID()
+    let speciesType: String
+    let collectionPath: String
+}
+
 struct MyPointsListView: View {
     
+    private let speciesList: [SpeciesItem] = [
+        SpeciesItem(speciesType: "Antelope", collectionPath: "antelope"),
+        SpeciesItem(speciesType: "Black Bear", collectionPath: "black_bear"),
+        SpeciesItem(speciesType: "Bighorn Sheep", collectionPath: "bighorn_sheep"),
+        SpeciesItem(speciesType: "Bison", collectionPath: "bison"),
+        SpeciesItem(speciesType: "Elk", collectionPath: "elk"),
+        SpeciesItem(speciesType: "Deer", collectionPath: "deer"),
+        SpeciesItem(speciesType: "Moose", collectionPath: "moose"),
+        SpeciesItem(speciesType: "Mountain Goat", collectionPath: "mountain_goat")
+    ]
+    
     var body: some View {
-            VStack {
-                NavigationLink(destination: MyPointsView(speciesType: "Antelope", collectionPath: "antelope")) {
-                    Text("Antelope")
-                         .foregroundColor(.white)
-                         .bold()
-                         .frame(width: 275.0, height: 30.0)
+        NavigationView {
+            VStack(spacing: 0) {
+                List(speciesList) { speciesItem in
+                    NavigationLink(destination: MyPointsView(speciesType: speciesItem.speciesType, collectionPath: speciesItem.collectionPath)) {
+                        Text(speciesItem.speciesType)
+                        .foregroundColor(.white)
+                        .bold()
+                        .frame(width: 275.0, height: 30.0)
+                    }
+                    .buttonStyle(.bordered)
+                    .background(Color("MainColor"))
+                    .cornerRadius(10)
+                    .padding()
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(Color("BackgroundColor"))
                 }
-                .buttonStyle(.bordered)
-                .background(Color("MainColor"))
-                .cornerRadius(10)
-                .padding()
-
-                NavigationLink(destination: MyPointsView(speciesType: "Black Bear", collectionPath: "black_bear")) {
-                    Text("Black Bear")
-                         .foregroundColor(.white)
-                         .bold()
-                         .frame(width: 275.0, height: 30.0)
-                }
-                .buttonStyle(.bordered)
-                .background(Color("MainColor"))
-                .cornerRadius(10)
-                .padding()
-
-                NavigationLink(destination: MyPointsView(speciesType: "Bighorn Sheep", collectionPath: "bighorn_sheep")) {
-                    Text("Bighorn Sheep")
-                         .foregroundColor(.white)
-                         .bold()
-                         .frame(width: 275.0, height: 30.0)
-                }
-                .buttonStyle(.bordered)
-                .background(Color("MainColor"))
-                .cornerRadius(10)
-                .padding()
-                
-                NavigationLink(destination: MyPointsView(speciesType: "Bison", collectionPath: "bison")) {
-                    Text("Bison")
-                         .foregroundColor(.white)
-                         .bold()
-                         .frame(width: 275.0, height: 30.0)
-                }
-                .buttonStyle(.bordered)
-                .background(Color("MainColor"))
-                .cornerRadius(10)
-                .padding()
-                
-                NavigationLink(destination: MyPointsView(speciesType: "Elk", collectionPath: "elk")) {
-                    Text("Elk")
-                         .foregroundColor(.white)
-                         .bold()
-                         .frame(width: 275.0, height: 30.0)
-                }
-                .buttonStyle(.bordered)
-                .background(Color("MainColor"))
-                .cornerRadius(10)
-                .padding()
-                
-                NavigationLink(destination: MyPointsView(speciesType: "Deer", collectionPath: "deer")) {
-                    Text("Deer")
-                         .foregroundColor(.white)
-                         .bold()
-                         .frame(width: 275.0, height: 30.0)
-                }
-                .buttonStyle(.bordered)
-                .background(Color("MainColor"))
-                .cornerRadius(10)
-                .padding()
-                
-                NavigationLink(destination: MyPointsView(speciesType: "Moose", collectionPath: "moose")) {
-                    Text("Moose")
-                         .foregroundColor(.white)
-                         .bold()
-                         .frame(width: 275.0, height: 30.0)
-                }
-                .buttonStyle(.bordered)
-                .background(Color("MainColor"))
-                .cornerRadius(10)
-                .padding()
-                
-                NavigationLink(destination: MyPointsView(speciesType: "Mountain Goat", collectionPath: "mountain_goat")) {
-                    Text("Mountain Goat")
-                         .foregroundColor(.white)
-                         .bold()
-                         .frame(width: 275.0, height: 30.0)
-                }
-                .buttonStyle(.bordered)
-                .background(Color("MainColor"))
-                .cornerRadius(10)
+                .listStyle(PlainListStyle())
+                .background(Color("BackgroundColor"))
                 .padding()
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("BackgroundColor"))
+        }
+        .background(Color("BackgroundColor"))
+        .navigationBarHidden(true)
     }
 }
 

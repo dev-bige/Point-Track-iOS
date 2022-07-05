@@ -13,8 +13,8 @@ struct SettingsView: View {
     
     var body: some View {
             VStack {
-                NavigationLink(destination: EditProfileView()) {
-                   Text("Edit Profile")
+                NavigationLink(destination: MyProfileView()) {
+                   Text("My Profile")
                         .foregroundColor(.white)
                         .bold()
                         .frame(width: 275.0, height: 30.0)

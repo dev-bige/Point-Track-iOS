@@ -52,20 +52,41 @@ struct ApplicationDeadlineDetailsView: View {
                     Text("Set")
                         .foregroundColor(Color.white)
                         .onTapGesture {
-                            deadlineReminderViewModel.addNewDeadline(deadlineReminder: DeadlineReminder(
-                                notificationTime: Timestamp(date: reminderTime),
-                                    reminderTitle: applicationDeadline.title,
-                                    requestCode: 1
-                                ))
+                            let deadlineReminderVar = DeadlineReminder(notificationTime: Timestamp(date: reminderTime), reminderTitle: applicationDeadline.title, requestCode: 1)
+                            
+                            deadlineReminderViewModel.addNewDeadline(deadlineReminder: deadlineReminderVar)
+                            
+                            scheduleLocal(userDeadlineReminder: deadlineReminderVar)
                         }
             }
                 .buttonStyle(.bordered)
                 .cornerRadius(10)
                 .background(Color("MainColor"))
                 .padding()
+            
+            Text(self.deadlineReminderViewModel.addDeadlineReminderStatusMessage)
+                .foregroundColor(Color("MainColor"))
+                .padding()
+                .multilineTextAlignment(.center)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("BackgroundColor"))
+    }
+    
+    func scheduleLocal(userDeadlineReminder: DeadlineReminder) {
+        let center = UNUserNotificationCenter.current()
+
+        let content = UNMutableNotificationContent()
+        content.title = userDeadlineReminder.reminderTitle
+        content.body = "Apply for " + applicationDeadline.details + " during the period of " + applicationDeadline.applicationPeriod + "."
+        content.categoryIdentifier = "alarm"
+        content.sound = UNNotificationSound.default
+
+        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: Date(timeIntervalSince1970: Double(userDeadlineReminder.notificationTime.seconds)))
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        center.add(request)
     }
 }
 
@@ -107,8 +128,6 @@ struct ApplicationDeadlineRow: View {
 
 struct ApplicationDeadlineView: View {
 
- 
-    
     @StateObject private var applicationDeadlineViewModel = ApplicationDeadlineViewModel()
     
     var body: some View {
@@ -121,7 +140,11 @@ struct ApplicationDeadlineView: View {
                     .padding(.bottom)
                 
                 NavigationLink(destination: DeadlineReminderView()) {
-                    Image(systemName: "calendar.badge.clock")
+                    Text("View Reminders")
+                        .fontWeight(.bold)
+                        .foregroundColor(Color("MainColor"))
+                        .font(.title2)
+                    //Image(systemName: "calendar.badge.clock")
                 }
                 
                 List(applicationDeadlineViewModel.applicationDeadlines) { applicationDeadline in

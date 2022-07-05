@@ -14,9 +14,11 @@ class DeadlineReminderViewModel: ObservableObject {
     @Published var userDeadlineReminders = [DeadlineReminder]()
     
     @Published var addDeadlineReminderStatusMessage = ""
+    @Published var getDeadlineReminderStatusMessage = ""
     
     func getAllDeadlineReminders() {
         self.userDeadlineReminders.removeAll()
+        self.getDeadlineReminderStatusMessage = ""
         
         let currentTimestamp = Timestamp(seconds: Int64(Date().timeIntervalSince1970), nanoseconds: 0)
         
@@ -37,14 +39,21 @@ class DeadlineReminderViewModel: ObservableObject {
                             
                             let userReminder = DeadlineReminder(notificationTime: notificationTime, reminderTitle: reminderTitle, requestCode: requestCode)
                             
-                            userDeadlineReminderTemp.append(userReminder)
+                            if userReminder.notificationTime.seconds >= currentTimestamp.seconds {
+                                userDeadlineReminderTemp.append(userReminder)
+                            }
                         }
                     }
-                    
                     else {
                         print("No deadline reminders found")
                     }
                     
+                    if userDeadlineReminderTemp.isEmpty {
+                        self.getDeadlineReminderStatusMessage = "No Reminders Set!"
+                    }
+                                        
+                    userDeadlineReminderTemp.sort { $0.notificationTime.seconds < $1.notificationTime.seconds}
+
                     self.userDeadlineReminders = userDeadlineReminderTemp
                 }
             }

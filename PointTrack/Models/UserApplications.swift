@@ -10,9 +10,9 @@ import Foundation
 class UserApplications: Identifiable {
     
     var applications = [Application]()
-    var totalApplyingCost: UInt64
+    var totalApplyingCost: Double
     
-    init(applications: [Application], totalApplyingCost: UInt64) {
+    init(applications: [Application], totalApplyingCost: Double) {
         self.applications = applications
         self.totalApplyingCost = totalApplyingCost
     }

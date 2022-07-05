@@ -55,18 +55,6 @@ struct EditProfileView: View {
                 }
                 
                 Section(header:
-                            Text("Edit Email:")
-                            .fontWeight(.bold)
-                            .foregroundColor(Color("MainColor"))
-                ) {
-                    TextField(
-                        "Enter your new email",
-                        text: $email
-                    )
-                    .keyboardType(.emailAddress)
-                }
-                
-                Section(header:
                             Text("Edit Resident State:")
                             .fontWeight(.bold)
                             .foregroundColor(Color("MainColor"))
@@ -84,7 +72,7 @@ struct EditProfileView: View {
                             Text("Update")
                                 .foregroundColor(Color.white)
                                 .onTapGesture {
-                                    authViewModel.updateProfile()
+                                    self.authViewModel.updateProfile(name: name, username: username, residentState: residentState)
                                 }
                     }
                         .buttonStyle(.bordered)
@@ -95,8 +83,19 @@ struct EditProfileView: View {
                 .frame(maxWidth: .infinity)
                 .multilineTextAlignment(.center)
                 .listRowBackground(Color("BackgroundColor"))
+                
+                Section {
+                    Text(self.authViewModel.updateProfileStatusMessage)
+                        .foregroundColor(Color("MainColor"))
+                        .bold()
+                        .lineLimit(nil)
+                }
+                .frame(maxWidth: .infinity)
+                .multilineTextAlignment(.center)
+                .listRowBackground(Color("BackgroundColor"))
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("BackgroundColor"))
     }
 }

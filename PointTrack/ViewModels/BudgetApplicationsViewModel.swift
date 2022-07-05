@@ -9,7 +9,17 @@ import Foundation
 
 class BudgetApplicationsViewModel: ObservableObject {
     
-    @Published var userPoints = [UserPoints]()
+    @Published var userApplications = [Application]()
 
-    
+    func getUserApplications() {
+        
+        FirebaseManager.shared.firestore
+            .collection("user_applications")
+            .document(FirebaseManager.shared.auth.currentUser!.uid)
+            .getDocument() { (document, error) in
+                if let document = document, document.exists {
+                
+                }
+            }
+    }
 }

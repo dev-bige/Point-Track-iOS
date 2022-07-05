@@ -11,11 +11,13 @@ import Firebase
 @main
 struct PointTrackApp: App {
 
+    @StateObject var localNotificationManger = LocalNotificationMangager()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(SessionStore())
+                .environmentObject(localNotificationManger)
         }
     }
 }

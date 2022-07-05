@@ -7,10 +7,45 @@
 
 import SwiftUI
 
+struct MyBudgetTagsRow: View {
+    
+    @State var userTag: Tag
+    
+    var body: some View {
+        VStack {
+            Text(userTag.state)
+                .foregroundColor(Color.white)
+                .fontWeight(.bold)
+                .padding(.top)
+            HStack {
+                Text(userTag.species)
+                    .foregroundColor(Color.white)
+                    .padding()
+                    .lineLimit(nil)
+                Spacer()
+                Text("$" + userTag.cost.formatted())
+                    .foregroundColor(Color.white)
+                    .padding()
+                    .lineLimit(nil)
+            }
+            .padding(.bottom)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color("MainColor"))
+        .listRowSeparator(.hidden)
+        .listRowBackground(Color("BackgroundColor"))
+        .cornerRadius(10)
+    }
+}
+
 struct MyBudgetTagsView: View {
+    
+    @StateObject var budgetTagsViewModel = BudgetTagsViewModel()
+    
     var body: some View {
             VStack {
-                Text("Total Tag Cost: $0")
+                Text("Total Tag Cost: $" + budgetTagsViewModel.totalTagCost.formatted())
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(Color("MainColor"))
@@ -26,11 +61,32 @@ struct MyBudgetTagsView: View {
                 .background(Color("MainColor"))
                 .cornerRadius(10)
                 .padding()
+                
+                List {
+                    ForEach (budgetTagsViewModel.userTags) { userTag in
+                        MyBudgetTagsRow(userTag: userTag)
+                    }
+                    .onDelete(perform: delete)
+                }
+                .lineLimit(nil)
+                .background(Color("BackgroundColor"))
+                .listStyle(PlainListStyle())
+                .padding()
             }
-            .navigationTitle("My Tags")
+            .onAppear {
+                self.budgetTagsViewModel.getUserTags()
+            }
             .navigationBarTitleDisplayMode(.inline)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("BackgroundColor"))
+    }
+    
+    func delete(at offsets: IndexSet) {
+        let indexToDelete = offsets[offsets.startIndex]
+        
+        budgetTagsViewModel.deleteTag(tagToDelete: budgetTagsViewModel.userTags[indexToDelete])
+        
+        budgetTagsViewModel.userTags.remove(atOffsets: offsets)
     }
 }
 
