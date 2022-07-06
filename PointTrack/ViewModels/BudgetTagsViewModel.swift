@@ -11,9 +11,16 @@ import FirebaseFirestore
 
 class BudgetTagsViewModel: ObservableObject {
     
+    @Published var authViewModel: AuthViewModel
+    
+    init () {
+        authViewModel = AuthViewModel()
+        authViewModel.getCurrentUserObj()
+    }
+    
     @Published var userTags = [Tag]()
     @Published var totalTagCost: Int64 = 0
-    
+        
     @Published var species = [String]()
         
     @Published var getUserTagStatusMessage = ""
@@ -46,11 +53,16 @@ class BudgetTagsViewModel: ObservableObject {
                             userTagsTemp.append(tag)
                         }
                     }
+                    
                 } else {
                     self.getUserTagStatusMessage = "No Tags found!"
                 }
                 
-                userTagsTemp.sort { $0.cost < $1.cost}
+                userTagsTemp.sort { $0.cost > $1.cost}
+                
+                if userTagsTemp.isEmpty {
+                    self.getUserTagStatusMessage = "No Tags found!"
+                }
                 
                 self.userTags = userTagsTemp
             }
@@ -58,37 +70,62 @@ class BudgetTagsViewModel: ObservableObject {
     
     func addTag(state: String, species: String) {
         
-        let tagRefCost = 0
+        let stateFormatted = state.lowercased().replacingOccurrences(of: " ", with: "_")
+        let speciesFormatted = species.lowercased().replacingOccurrences(of: " ", with: "_")
         
-        let tagData = [
-            "state": state,
-            "species": species,
-            "cost": tagRefCost
-        ] as [String : Any ]
-        
-        let docRef = FirebaseManager.shared.firestore
+        let budgetRef = FirebaseManager.shared.firestore
             .collection("user_tags")
             .document(FirebaseManager.shared.auth.currentUser!.uid)
-            
-        docRef.getDocument { (document, err) in
+        
+        let refTag = FirebaseManager.shared.firestore
+            .collection("reference_tag")
+            .document(stateFormatted)
+        
+        refTag.getDocument { (document, err) in
+            var tagRefCost = -1
+
             if let document = document, document.exists {
-                docRef.updateData([
-                    "tags" : FieldValue.arrayUnion([tagData]
-                )])
+                var documentPath = ""
                 
-                docRef.updateData([
-                    "totalTagCost" : FieldValue.increment(Int64(tagRefCost))
-                ])
+                // resident
+                if self.authViewModel.currentUserObj.residentState.elementsEqual(state) {
+                    documentPath = "resident" + "_" + speciesFormatted
+                }
+                else {
+                    documentPath = "nonresident" + "_" + speciesFormatted
+                }
                 
-                self.addTagStatusMessage = "Tag Added Succesfully!"
-            } else {
-                let newData = [
-                    "tags": [tagData],
-                    "totalTagCost": tagRefCost
-                ] as [String : Any ]
-                
-                docRef.setData(newData)
-                self.addTagStatusMessage = "Tag Added Succesfully!"
+                if (!documentPath.isEmpty) {
+                    tagRefCost = document.data()?[documentPath] as? Int ?? -1
+                }
+            }
+            
+            let tagData = [
+                "state": state,
+                "species": species,
+                "cost": tagRefCost
+            ] as [String : Any ]
+            
+            budgetRef.getDocument { (document, err) in
+                if let document = document, document.exists {
+                    budgetRef.updateData([
+                        "tags" : FieldValue.arrayUnion([tagData]
+                    )])
+                    
+                    budgetRef.updateData([
+                        "totalTagCost" : FieldValue.increment(Int64(tagRefCost))
+                    ])
+                    
+                    self.addTagStatusMessage = "Tag Added Succesfully!"
+                } else {
+                    let newData = [
+                        "tags": [tagData],
+                        "totalTagCost": tagRefCost
+                    ] as [String : Any ]
+                    
+                    budgetRef.setData(newData)
+                    self.addTagStatusMessage = "Tag Added Succesfully!"
+                }
             }
         }
     }
@@ -112,6 +149,8 @@ class BudgetTagsViewModel: ObservableObject {
                 docRef.updateData([
                     "totalTagCost"  : FieldValue.increment(Int64(tagToDelete.cost) * -1)
                 ])
+                
+                self.totalTagCost -= tagToDelete.cost
             } else {
                 print("Error deleting user tag")
             }
@@ -140,17 +179,20 @@ class BudgetTagsViewModel: ObservableObject {
         var tempSpecies = [String]()
         
         if (!state.isEmpty) {
-        
+            
+            let stateFormatted = state.lowercased().replacingOccurrences(of: " ", with: "_")
+            print(stateFormatted)
+            
             FirebaseManager.shared.firestore
                 .collection("reference_tag")
-                .document(state)
+                .document(stateFormatted)
                 .getDocument() { (document, error) in
                     if let document = document, document.exists {
                         let data = document.data()
                         
                         tempSpecies = data?["species_tag"] as? [String] ?? ["error"]
                     } else {
-                        print("Erorr getting species for that state.")
+                        print("Erorr getting species for " + stateFormatted)
                     }
                     completionHandler(tempSpecies)
                 }

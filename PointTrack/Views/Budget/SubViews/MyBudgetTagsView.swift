@@ -20,12 +20,12 @@ struct MyBudgetTagsRow: View {
             HStack {
                 Text(userTag.species)
                     .foregroundColor(Color.white)
-                    .padding()
+                    .padding(.leading)
                     .lineLimit(nil)
                 Spacer()
                 Text("$" + userTag.cost.formatted())
                     .foregroundColor(Color.white)
-                    .padding()
+                    .padding(.trailing)
                     .lineLimit(nil)
             }
             .padding(.bottom)
@@ -61,6 +61,11 @@ struct MyBudgetTagsView: View {
                 .background(Color("MainColor"))
                 .cornerRadius(10)
                 .padding()
+                
+                Text("My Tags")
+                    .font(.title3)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color("MainColor"))
                 
                 List {
                     ForEach (budgetTagsViewModel.userTags) { userTag in

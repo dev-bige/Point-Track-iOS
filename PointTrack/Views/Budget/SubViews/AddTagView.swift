@@ -46,25 +46,16 @@ struct AddTagView: View {
                     Picker("Species", selection: $selectedSpecies) {
                         ForEach(speciesOptions, id: \.self) { species in
                             Text(species)
+                                .foregroundColor(Color("MainColor"))
+                                .bold()
                         }
                     }
-                    .onChange(of: stateOptionsPopulated) { state in
+                    .onChange(of: !selectedState.isEmpty) { state in
                         budgetTagsViewModel.getSpeciesForTags(state: selectedState) { species in
                             self.speciesOptions = species
                         }
                     }
                 }
-                
-//                Section(header:
-//                    Text("Species")
-//                    .fontWeight(.bold)
-//                    .foregroundColor(Color("MainColor"))
-//                ) {
-//                    TextField(
-//                        "Species",
-//                        text: $species
-//                    )
-//                }
                 
                 Section {
                     Button {

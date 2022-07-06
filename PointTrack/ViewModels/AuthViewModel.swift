@@ -110,7 +110,7 @@ class AuthViewModel: ObservableObject {
     
     func getCurrentUserObj() {
         let docRef = FirebaseManager.shared.firestore.collection("users").document(FirebaseManager.shared.auth.currentUser!.uid)
-
+        
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
                 let data = document.data()
@@ -119,7 +119,6 @@ class AuthViewModel: ObservableObject {
                 let dataEmail = data?["email"] as? String ?? ""
                 let dataUserName = data?["username"] as? String ?? ""
                 let dataResidentState = data?["residentState"] as? String ?? ""
-                
                 
                 self.currentUserObj = UserObj(email: dataEmail, name: dataName, residentState: dataResidentState, username: dataUserName)
             } else {

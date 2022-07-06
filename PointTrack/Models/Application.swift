@@ -18,8 +18,9 @@ class Application: Identifiable {
     var application_end: Timestamp
     var details: String
     var applicationEpochTime: UInt64
+    var totalCost: UInt64
     
-    init(title: String, applicationPeriod: String, state: String, species: [String], applicationLink: String, application_end: Timestamp, details: String, applicationEpochTime: UInt64) {
+    init(title: String, applicationPeriod: String, state: String, species: [String], applicationLink: String, application_end: Timestamp, details: String, applicationEpochTime: UInt64, totalCost: UInt64) {
         self.title = title
         self.applicationPeriod = applicationPeriod
         self.state = state
@@ -28,5 +29,6 @@ class Application: Identifiable {
         self.application_end = application_end
         self.details = details
         self.applicationEpochTime = applicationEpochTime
+        self.totalCost = totalCost
     }
 }

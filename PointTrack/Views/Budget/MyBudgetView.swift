@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct MyBudgetView: View {
+    
+    @StateObject var budgetTagsViewModel = BudgetTagsViewModel()
+    @StateObject var budgetApplicationsViewModel = BudgetApplicationsViewModel()
+    
     var body: some View {
             VStack {
                 Text("Applications")
@@ -27,7 +31,7 @@ struct MyBudgetView: View {
                 .cornerRadius(10)
                 .padding()
                 
-                Text("Total Applying Cost: $0")
+                Text("Total Applying Cost: $" + budgetApplicationsViewModel.totalApplyingCost.formatted())
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading)
                     .padding(.top)
@@ -49,7 +53,7 @@ struct MyBudgetView: View {
                 .cornerRadius(10)
                 .padding()
                 
-                Text("Total Tag Cost: $0")
+                Text("Total Tag Cost: $" + budgetTagsViewModel.totalTagCost.formatted())
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading)
                     .padding(.top)
@@ -60,14 +64,18 @@ struct MyBudgetView: View {
                     .foregroundColor(Color("MainColor"))
                     .padding()
                 
-                Text("Total Cost: $0")
+                Text("Total Cost: $" + (budgetTagsViewModel.totalTagCost + budgetApplicationsViewModel.totalApplyingCost).formatted())
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading)
 
-                Text("Total Monthly Cost: $0")
+                Text("Total Monthly Cost: $" + ((budgetTagsViewModel.totalTagCost + budgetApplicationsViewModel.totalApplyingCost) / 12).formatted())
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading)
                     .padding(.top)
+            }
+            .onAppear {
+                self.budgetTagsViewModel.getUserTags()
+                self.budgetApplicationsViewModel.getUserApplications()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("BackgroundColor"))
