@@ -10,25 +10,13 @@ import Firebase
 
 class Application: Identifiable {
     
-    var title: String
-    var applicationPeriod: String
     var state: String
     var species = [String]()
-    var applicationLink: String
-    var application_end: Timestamp
-    var details: String
-    var applicationEpochTime: UInt64
-    var totalCost: UInt64
+    var totalCost = Int64()
     
-    init(title: String, applicationPeriod: String, state: String, species: [String], applicationLink: String, application_end: Timestamp, details: String, applicationEpochTime: UInt64, totalCost: UInt64) {
-        self.title = title
-        self.applicationPeriod = applicationPeriod
+    init(state: String, species: [String], totalCost: Int64) {
         self.state = state
         self.species = species
-        self.applicationLink = applicationLink
-        self.application_end = application_end
-        self.details = details
-        self.applicationEpochTime = applicationEpochTime
         self.totalCost = totalCost
     }
 }
