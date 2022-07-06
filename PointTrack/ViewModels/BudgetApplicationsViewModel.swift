@@ -189,6 +189,8 @@ class BudgetApplicationsViewModel: ObservableObject {
                     if let document = document, document.exists {
                         let data = document.data()
                         
+                        print(data?["species_applications"])
+                        
                         tempSpecies = data?["species_applications"] as? [String] ?? ["error"]
                     } else {
                         print("Error getting species for " + stateFormatted)

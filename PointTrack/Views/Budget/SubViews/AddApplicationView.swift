@@ -17,7 +17,7 @@ struct AddApplicationView: View {
     @State var stateOptionsPopulated: Bool = false
     
     @State private var selectedState = ""
-    @State private var selectedSpecies = [String]()
+    @State private var selectedSpecies = ""
     
     init() {
         UITableView.appearance().backgroundColor = UIColor(Color("BackgroundColor"))
