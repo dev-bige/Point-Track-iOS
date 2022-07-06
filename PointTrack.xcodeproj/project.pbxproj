@@ -43,6 +43,7 @@
 		A895B2C327EA8828006116B9 /* ApplicationDeadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A895B2C227EA8828006116B9 /* ApplicationDeadlineView.swift */; };
 		A895B2C527EA8849006116B9 /* MyBudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A895B2C427EA8849006116B9 /* MyBudgetView.swift */; };
 		A895B2C927EAA559006116B9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A895B2C827EAA559006116B9 /* SettingsView.swift */; };
+		A8A41E162875293C009D3B7B /* ApplyingCostCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A41E152875293C009D3B7B /* ApplyingCostCalculator.swift */; };
 		A8A693FC280647FD00988F70 /* NewsPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A693FB280647FD00988F70 /* NewsPostViewModel.swift */; };
 		A8A693FE280650F400988F70 /* ApplicationDeadlineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A693FD280650F400988F70 /* ApplicationDeadlineViewModel.swift */; };
 		A8A694002806708D00988F70 /* MyPointsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A693FF2806708D00988F70 /* MyPointsViewModel.swift */; };
@@ -114,6 +115,7 @@
 		A895B2C227EA8828006116B9 /* ApplicationDeadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDeadlineView.swift; sourceTree = "<group>"; };
 		A895B2C427EA8849006116B9 /* MyBudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBudgetView.swift; sourceTree = "<group>"; };
 		A895B2C827EAA559006116B9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A8A41E152875293C009D3B7B /* ApplyingCostCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyingCostCalculator.swift; sourceTree = "<group>"; };
 		A8A693FB280647FD00988F70 /* NewsPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPostViewModel.swift; sourceTree = "<group>"; };
 		A8A693FD280650F400988F70 /* ApplicationDeadlineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDeadlineViewModel.swift; sourceTree = "<group>"; };
 		A8A693FF2806708D00988F70 /* MyPointsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPointsViewModel.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 			children = (
 				A8848A0727FD2BB700F3C55B /* ButtonView.swift */,
 				A8A6941A2810E08B00988F70 /* Reference.swift */,
+				A8A41E152875293C009D3B7B /* ApplyingCostCalculator.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				A8A6941928105B6C00988F70 /* AddApplicationView.swift in Sources */,
 				A895B2C927EAA559006116B9 /* SettingsView.swift in Sources */,
 				A8A6941F2812490B00988F70 /* BudgetTagsViewModel.swift in Sources */,
+				A8A41E162875293C009D3B7B /* ApplyingCostCalculator.swift in Sources */,
 				A8A6942928124D7C00988F70 /* Tag.swift in Sources */,
 				A8848A102800B2B800F3C55B /* MyBudgetApplicationsView.swift in Sources */,
 				A8A69404280C775300988F70 /* AuthViewModel.swift in Sources */,

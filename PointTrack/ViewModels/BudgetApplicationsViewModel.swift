@@ -82,7 +82,50 @@ class BudgetApplicationsViewModel: ObservableObject {
             .collection("reference_applications")
             .document(stateFormatted)
     
-        
+        refApplication.getDocument { (document, err) in
+            var applicationRefCost = -1
+            
+            if let document = document, document.exists {
+                var resident = false
+                
+                if self.authViewModel.currentUserObj.residentState.elementsEqual(state) {
+                    resident = true
+                }
+                
+                let applyingCostCalculator = ApplyingCostCalculator()
+                
+                applicationRefCost = applyingCostCalculator.calculateApplyingCost(state: state, documentSnapshot: document, species: species, resident: resident)
+            }
+            
+            let applicationData = [
+                "state" : state,
+                "species" : species,
+                "totalCost" : applicationRefCost
+            ] as [String : Any]
+            
+            budgetRef.getDocument { (document, err) in
+                if let document = document, document.exists {
+                    budgetRef.updateData([
+                        "applications" : FieldValue.arrayUnion([applicationData])
+                    ])
+                    
+                    budgetRef.updateData([
+                        "totalApplyingCost" : FieldValue.increment(Int64(applicationRefCost))
+                    ])
+                    
+                    self.addApplicationStatusMessage = "Application Added Succesfully!"
+                } else {
+                    let newData = [
+                        "applications" : [applicationData],
+                        "totalApplyingCost" : applicationRefCost
+                    ] as [String : Any]
+                    
+                    budgetRef.setData(newData)
+                    self.addApplicationStatusMessage = "Application Added Succesfully!"
+                }
+            }
+            
+        }
     }
     
     func deleteApplication(applicationToDelete: Application) {
