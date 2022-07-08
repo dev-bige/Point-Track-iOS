@@ -57,23 +57,21 @@ class BudgetApplicationsViewModel: ObservableObject {
                 } else {
                     self.getUserApplicationStatusMessage = "No Applications found!"
                 }
+                
+                userApplicationsTemp.sort { $0.totalCost > $1.totalCost}
+                
+                if userApplicationsTemp.isEmpty {
+                    self.getUserApplicationStatusMessage = "No Applications found!"
+                }
+                
+                self.userApplications = userApplicationsTemp
             }
-        
-        userApplications.sort { $0.totalCost > $1.totalCost}
-        
-        if userApplicationsTemp.isEmpty {
-            self.getUserApplicationStatusMessage = "No Applications found!"
-        }
-        
-        self.userApplications = userApplicationsTemp
     }
     
-    func addApplication(state: String, species: [String]) {
+    func addApplication(state: String, species: Set<String>) {
         
         let stateFormatted = state.lowercased().replacingOccurrences(of: " ", with: "_")
-        
-        let speciesFormatted = species.formatted().lowercased().replacingOccurrences(of: " ", with: "_")
-        
+                
         let budgetRef = FirebaseManager.shared.firestore
             .collection("user_applications")
             .document(FirebaseManager.shared.auth.currentUser!.uid)
@@ -99,7 +97,7 @@ class BudgetApplicationsViewModel: ObservableObject {
             
             let applicationData = [
                 "state" : state,
-                "species" : species,
+                "species" : Array(species),
                 "totalCost" : applicationRefCost
             ] as [String : Any]
             

@@ -7,9 +7,18 @@
 
 import SwiftUI
 
+extension String: Identifiable {
+    public typealias ID = Int
+    public var id: Int {
+        return hash
+    }
+}
+
 struct AddApplicationView: View {
     
     @ObservedObject var budgetApplicationsViewModel = BudgetApplicationsViewModel()
+    
+    @EnvironmentObject var selections: ApplicationMultPicker
     
     @State var stateOptions = [String]()
     @State var speciesOptions = [String]()
@@ -17,7 +26,7 @@ struct AddApplicationView: View {
     @State var stateOptionsPopulated: Bool = false
     
     @State private var selectedState = ""
-    @State private var selectedSpecies = ""
+    @State private var selectedSpecies : Set<String> = [""]
     
     init() {
         UITableView.appearance().backgroundColor = UIColor(Color("BackgroundColor"))
@@ -42,15 +51,15 @@ struct AddApplicationView: View {
                 }
                 
                 Section {
-                    Picker("Species", selection: $selectedSpecies) {
-                        ForEach(speciesOptions, id: \.self) { species in
-                            Text(species)
-                                .foregroundColor(Color("MainColor"))
-                                .bold()
-                        }
-                    }
+                    MultiSelector(
+                         label: Text("Species"),
+                         options: speciesOptions,
+                         optionToString: { $0 },
+                         selected: $selectedSpecies
+                     )
                     .onChange(of: !selectedState.isEmpty) { state in
                         budgetApplicationsViewModel.getSpeciesForApplications(state: selectedState) { species in
+                            self.selectedSpecies.removeAll()
                             self.speciesOptions = species
                         }
                     }

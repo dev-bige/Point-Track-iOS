@@ -129,37 +129,93 @@ struct ApplicationDeadlineRow: View {
 struct ApplicationDeadlineView: View {
 
     @StateObject private var applicationDeadlineViewModel = ApplicationDeadlineViewModel()
+    @State private var searchText = ""
+    
+//    @State var filterDeadlines: [ApplicationDeadline] {
+//        get {
+//            if searchText.isEmpty {
+//                return applicationDeadlineViewModel.applicationDeadlines
+//            } else {
+//                return applicationDeadlineViewModel.applicationDeadlines.filter { $0.title.localizedCaseInsensitiveContains(searchText) }
+//            }
+//        }
+//    }
+    
+    init () {
+        UINavigationBar.appearance().backgroundColor = UIColor(Color("BackgroundColor"))
+    }
+    
+    var searchResults: [ApplicationDeadline] {
+        if searchText.isEmpty {
+            return self.applicationDeadlineViewModel.applicationDeadlines
+        } else {
+            return self.applicationDeadlineViewModel.applicationDeadlines.filter { $0.title.contains(searchText) }
+        }
+    }
     
     var body: some View {
-            VStack {
 
-                Text("Upcoming Deadlines")
-                    .fontWeight(.bold)
-                    .foregroundColor(Color("MainColor"))
-                    .font(.title)
-                    .padding(.bottom)
+
                 
-                NavigationLink(destination: DeadlineReminderView()) {
-                    Text("View Reminders")
-                        .fontWeight(.bold)
-                        .foregroundColor(Color("MainColor"))
-                        .font(.title2)
-                    //Image(systemName: "calendar.badge.clock")
+//                List(applicationDeadlineViewModel.applicationDeadlines) { applicationDeadline in
+//                    ApplicationDeadlineRow(applicationDeadline: applicationDeadline)
+//                }
+//                .searchable(text: $searchText)
+//                .lineLimit(nil)
+//                .background(Color("BackgroundColor"))
+//                .listStyle(PlainListStyle())
+//                .padding()
+        
+
+        
+                NavigationView {
+                    VStack {
+                        Text("Deadlines")
+                            .fontWeight(.bold)
+                            .foregroundColor(Color("MainColor"))
+                            .font(.title)
+                            .padding(.bottom)
+
+                        NavigationLink(destination: DeadlineReminderView()) {
+                            Text("View Deadline Reminders")
+                                .fontWeight(.bold)
+                                .foregroundColor(Color("MainColor"))
+                                .font(.title2)
+                        }
+
+                        List(searchResults) { applicationDeadline in
+                            ApplicationDeadlineRow(applicationDeadline: applicationDeadline)
+                        }
+                        .lineLimit(nil)
+                        .background(Color("BackgroundColor"))
+                        .listStyle(PlainListStyle())
+                        .padding()
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color("BackgroundColor"))
                 }
-                
-                List(applicationDeadlineViewModel.applicationDeadlines) { applicationDeadline in
-                    ApplicationDeadlineRow(applicationDeadline: applicationDeadline)
+                .onAppear() {
+                    self.applicationDeadlineViewModel.getAllDeadlines()
                 }
-                .lineLimit(nil)
+                .padding(.zero)
+                .navigationBarHidden(true)
+                .navigationBarBackButtonHidden(true)
+                .searchable(text: $searchText, prompt: "Search Deadlines")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color("BackgroundColor"))
-                .listStyle(PlainListStyle())
-                .padding()
-            }
-            .onAppear() {
-                self.applicationDeadlineViewModel.getAllDeadlines()
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color("BackgroundColor"))
+//            }
+//            .onAppear() {
+//                self.applicationDeadlineViewModel.getAllDeadlines() { applicationDeadlines in
+//                    if searchText.isEmpty {
+//                        self.filterDeadlines = applicationDeadlines
+//                        print(filterDeadlines.count)
+//                    } else {
+//                        self.filterDeadlines = applicationDeadlines.filter { $0.title.localizedCaseInsensitiveContains(searchText) }
+//                    }
+//                }
+//            }
+//            .frame(maxWidth: .infinity, maxHeight: .infinity)
+//            .background(Color("BackgroundColor"))
     }
 }
 

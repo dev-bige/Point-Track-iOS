@@ -42,8 +42,6 @@ class ApplicationDeadlineViewModel: ObservableObject {
                     applicationLink: applicationLink
                 )
             }
-            
-            print(self.applicationDeadlines.count)
         }
     }
 }

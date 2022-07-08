@@ -58,7 +58,9 @@ struct LoginView: View {
                     }
                 }
                     .buttonStyle(.bordered)
+                    .cornerRadius(10)
                     .background(Color("MainColor"))
+                    .padding()
                 
                 NavigationLink(destination: SignUpView()) {
                     Text("Don't have an account? Sign up here")
@@ -72,6 +74,7 @@ struct LoginView: View {
                     .padding()
                     .multilineTextAlignment(.center)
             }
+            .navigationBarTitleDisplayMode(.inline)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("BackgroundColor"))
     }

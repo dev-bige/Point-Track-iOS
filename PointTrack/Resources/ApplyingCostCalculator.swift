@@ -15,7 +15,7 @@ class ApplyingCostCalculator {
     let RESIDENT = "resident"
     let NONRESIDENT = "nonresident"
     
-    func calculateApplyingCost(state: String, documentSnapshot: DocumentSnapshot, species: [String], resident: Bool) -> Int {
+    func calculateApplyingCost(state: String, documentSnapshot: DocumentSnapshot, species: Set<String>, resident: Bool) -> Int {
         self.isResident = resident
 
         switch (state) {
@@ -56,7 +56,7 @@ class ApplyingCostCalculator {
         return documentSnapshot[documentField] as? Int ?? 0
     }
     
-    private func calculateAlaskaApplyingCost(documentSnapshot: DocumentSnapshot, species: [String]) -> Int {
+    private func calculateAlaskaApplyingCost(documentSnapshot: DocumentSnapshot, species: Set<String>) -> Int {
         
         var totalCost = 0
         
@@ -78,7 +78,7 @@ class ApplyingCostCalculator {
     }
     
     
-    private func calculateArizonaApplyingCost(documentSnapshot: DocumentSnapshot, species: [String]) -> Int {
+    private func calculateArizonaApplyingCost(documentSnapshot: DocumentSnapshot, species: Set<String>) -> Int {
         var totalCost = 0
         
         if isResident {
@@ -92,7 +92,7 @@ class ApplyingCostCalculator {
         return totalCost
     }
 
-    private func calculateCaliforniaApplyingCost(documentSnapshot: DocumentSnapshot, species: [String]) -> Int {
+    private func calculateCaliforniaApplyingCost(documentSnapshot: DocumentSnapshot, species: Set<String>) -> Int {
         var totalCost = 0
         
         if isResident {
@@ -106,7 +106,7 @@ class ApplyingCostCalculator {
         return totalCost
     }
 
-    private func calculateColoradoApplyingCost(documentSnapshot: DocumentSnapshot, species: [String]) -> Int {
+    private func calculateColoradoApplyingCost(documentSnapshot: DocumentSnapshot, species: Set<String>) -> Int {
         var totalCost = 0
         
         if isResident {
@@ -134,7 +134,7 @@ class ApplyingCostCalculator {
         return totalCost;
     }
 
-    private func calculateIdahoApplyingCost(documentSnapshot: DocumentSnapshot, species: [String]) -> Int {
+    private func calculateIdahoApplyingCost(documentSnapshot: DocumentSnapshot, species: Set<String>) -> Int {
         var totalCost = 0
         
         if isResident {
@@ -164,11 +164,11 @@ class ApplyingCostCalculator {
         return getIntFromDocumentSnapshot(documentSnapshot: documentSnapshot, documentField: "moose_point_fee")
     }
 
-    private func calculateMontanaApplyingCost(documentSnapshot: DocumentSnapshot, species: [String]) -> Int {
+    private func calculateMontanaApplyingCost(documentSnapshot: DocumentSnapshot, species: Set<String>) -> Int {
         return 0
     }
 
-    private func calculateNevadaApplyingCost(documentSnapshot: DocumentSnapshot, species: [String]) -> Int {
+    private func calculateNevadaApplyingCost(documentSnapshot: DocumentSnapshot, species: Set<String>) -> Int {
         var totalCost = 0
         
         if isResident {
@@ -194,7 +194,7 @@ class ApplyingCostCalculator {
         return totalCost
     }
 
-    private func calculateNewMexicoApplyingCost(documentSnapshot: DocumentSnapshot, species: [String]) -> Int {
+    private func calculateNewMexicoApplyingCost(documentSnapshot: DocumentSnapshot, species: Set<String>) -> Int {
         var totalCost = 0
         
         if (isResident) {
@@ -209,7 +209,7 @@ class ApplyingCostCalculator {
         return totalCost
     }
 
-    private func calculateOregonApplyingCost(documentSnapshot: DocumentSnapshot, species: [String]) -> Int {
+    private func calculateOregonApplyingCost(documentSnapshot: DocumentSnapshot, species: Set<String>) -> Int {
         var totalCost = 0
         
         if (isResident) {
@@ -223,7 +223,7 @@ class ApplyingCostCalculator {
         return totalCost
     }
 
-    private func calculateSouthDakotaApplyingCost(documentSnapshot: DocumentSnapshot, species: [String]) -> Int {
+    private func calculateSouthDakotaApplyingCost(documentSnapshot: DocumentSnapshot, species: Set<String>) -> Int {
         var totalCost = 0
         
         if (isResident) {
@@ -238,7 +238,7 @@ class ApplyingCostCalculator {
         return totalCost
     }
 
-    private func calculateUtahApplyingCost(documentSnapshot: DocumentSnapshot, species: [String]) -> Int {
+    private func calculateUtahApplyingCost(documentSnapshot: DocumentSnapshot, species: Set<String>) -> Int {
         var totalCost = 0
         
         if (isResident) {
@@ -252,12 +252,12 @@ class ApplyingCostCalculator {
         return totalCost
     }
 
-    private func calculateWashingtonApplyingCost(documentSnapshot: DocumentSnapshot, species: [String]) -> Int {
+    private func calculateWashingtonApplyingCost(documentSnapshot: DocumentSnapshot, species: Set<String>) -> Int {
         return 0
     }
 
 
-    private func calculateWyomingApplyingCost(documentSnapshot: DocumentSnapshot, species: [String]) -> Int {
+    private func calculateWyomingApplyingCost(documentSnapshot: DocumentSnapshot, species: Set<String>) -> Int {
         var totalCost = 0
         
         for specie in species {

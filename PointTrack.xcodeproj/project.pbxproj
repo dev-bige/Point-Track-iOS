@@ -24,6 +24,12 @@
 		A80C2E4027DE4EEC006892AA /* PointTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C2E3F27DE4EEC006892AA /* PointTrackTests.swift */; };
 		A80C2E4A27DE4EEC006892AA /* PointTrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C2E4927DE4EEC006892AA /* PointTrackUITests.swift */; };
 		A80C2E4C27DE4EEC006892AA /* PointTrackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C2E4B27DE4EEC006892AA /* PointTrackUITestsLaunchTests.swift */; };
+		A81170EA2875C1E8009D5626 /* MultiSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81170E92875C1E8009D5626 /* MultiSelectionView.swift */; };
+		A81170EC2875C207009D5626 /* MultiSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81170EB2875C207009D5626 /* MultiSelector.swift */; };
+		A81170EE28765034009D5626 /* ApplicationMultiPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81170ED28765034009D5626 /* ApplicationMultiPicker.swift */; };
+		A81170F228765308009D5626 /* MulitplePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81170F128765308009D5626 /* MulitplePickerView.swift */; };
+		A81170F4287674CB009D5626 /* Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81170F3287674CB009D5626 /* Species.swift */; };
+		A81170F6287676B8009D5626 /* Specie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81170F5287676B8009D5626 /* Specie.swift */; };
 		A85F5A73286F7071009ED78F /* DeadlineReminderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F5A72286F7071009ED78F /* DeadlineReminderViewModel.swift */; };
 		A85F5A75286F70C2009ED78F /* DeadlinReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F5A74286F70C2009ED78F /* DeadlinReminder.swift */; };
 		A85F5A782871D85C009ED78F /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F5A772871D85C009ED78F /* LocalNotificationManager.swift */; };
@@ -96,6 +102,12 @@
 		A80C2E4527DE4EEC006892AA /* PointTrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PointTrackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A80C2E4927DE4EEC006892AA /* PointTrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointTrackUITests.swift; sourceTree = "<group>"; };
 		A80C2E4B27DE4EEC006892AA /* PointTrackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointTrackUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A81170E92875C1E8009D5626 /* MultiSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectionView.swift; sourceTree = "<group>"; };
+		A81170EB2875C207009D5626 /* MultiSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelector.swift; sourceTree = "<group>"; };
+		A81170ED28765034009D5626 /* ApplicationMultiPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationMultiPicker.swift; sourceTree = "<group>"; };
+		A81170F128765308009D5626 /* MulitplePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulitplePickerView.swift; sourceTree = "<group>"; };
+		A81170F3287674CB009D5626 /* Species.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Species.swift; sourceTree = "<group>"; };
+		A81170F5287676B8009D5626 /* Specie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Specie.swift; sourceTree = "<group>"; };
 		A85F5A72286F7071009ED78F /* DeadlineReminderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlineReminderViewModel.swift; sourceTree = "<group>"; };
 		A85F5A74286F70C2009ED78F /* DeadlinReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlinReminder.swift; sourceTree = "<group>"; };
 		A85F5A772871D85C009ED78F /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
@@ -313,6 +325,9 @@
 				A8848A0727FD2BB700F3C55B /* ButtonView.swift */,
 				A8A6941A2810E08B00988F70 /* Reference.swift */,
 				A8A41E152875293C009D3B7B /* ApplyingCostCalculator.swift */,
+				A81170E92875C1E8009D5626 /* MultiSelectionView.swift */,
+				A81170EB2875C207009D5626 /* MultiSelector.swift */,
+				A81170F128765308009D5626 /* MulitplePickerView.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -329,6 +344,9 @@
 				A8A6942A28124D8900988F70 /* UserTags.swift */,
 				A85F5A74286F70C2009ED78F /* DeadlinReminder.swift */,
 				A85F5A7928732DEB009ED78F /* User.swift */,
+				A81170ED28765034009D5626 /* ApplicationMultiPicker.swift */,
+				A81170F3287674CB009D5626 /* Species.swift */,
+				A81170F5287676B8009D5626 /* Specie.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -558,8 +576,10 @@
 				A8A69402280670F600988F70 /* UserPoints.swift in Sources */,
 				A895B2C527EA8849006116B9 /* MyBudgetView.swift in Sources */,
 				A8A693FC280647FD00988F70 /* NewsPostViewModel.swift in Sources */,
+				A81170F4287674CB009D5626 /* Species.swift in Sources */,
 				A85F5A7C28733A7D009ED78F /* MyProfileView.swift in Sources */,
 				A8A6941728105B5A00988F70 /* AddTagView.swift in Sources */,
+				A81170EC2875C207009D5626 /* MultiSelector.swift in Sources */,
 				A85F5A75286F70C2009ED78F /* DeadlinReminder.swift in Sources */,
 				A895B2C127EA86D0006116B9 /* MyPointsListView.swift in Sources */,
 				A8018F2927E2C77200C80BFF /* MainView.swift in Sources */,
@@ -577,6 +597,8 @@
 				A8848A122800B2C300F3C55B /* MyBudgetTagsView.swift in Sources */,
 				A8A69415281041D000988F70 /* DeadlineReminderView.swift in Sources */,
 				A8A6941B2810E08B00988F70 /* Reference.swift in Sources */,
+				A81170F228765308009D5626 /* MulitplePickerView.swift in Sources */,
+				A81170F6287676B8009D5626 /* Specie.swift in Sources */,
 				A8A6942B28124D8900988F70 /* UserTags.swift in Sources */,
 				A85F5A782871D85C009ED78F /* LocalNotificationManager.swift in Sources */,
 				A8A6940D2810378000988F70 /* EditProfileView.swift in Sources */,
@@ -593,7 +615,9 @@
 				A8859A3E27DED13B0067436A /* ForgotPasswordView.swift in Sources */,
 				A80C2E2F27DE4EEB006892AA /* PointTrackApp.swift in Sources */,
 				A8848A0027FD24CB00F3C55B /* MyPointsView.swift in Sources */,
+				A81170EA2875C1E8009D5626 /* MultiSelectionView.swift in Sources */,
 				A8A694002806708D00988F70 /* MyPointsViewModel.swift in Sources */,
+				A81170EE28765034009D5626 /* ApplicationMultiPicker.swift in Sources */,
 				A8A6941D281248FE00988F70 /* BudgetApplicationsViewModel.swift in Sources */,
 				A8A69409280FB24C00988F70 /* AddPointsView.swift in Sources */,
 				A8A69425281249DD00988F70 /* UserApplications.swift in Sources */,
