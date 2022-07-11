@@ -108,7 +108,9 @@ struct SignUpView: View {
                                 .onTapGesture {
                                     self.authViewModel.signUp(name: name, username: username, email: email, residentState: residentState, password: password, passwordVerify: passwordVerify)
                                 }
+                                .frame(maxWidth: .infinity, alignment: .center)
                         }
+                        .frame(maxWidth: .infinity, alignment: .center)
                     }
                     .multilineTextAlignment(.center)
                     .buttonStyle(.bordered)
