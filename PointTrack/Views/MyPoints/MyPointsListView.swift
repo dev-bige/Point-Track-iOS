@@ -27,15 +27,14 @@ struct MyPointsListView: View {
     ]
     
     var body: some View {
-        NavigationView {
             VStack() {
                 List(speciesList) { speciesItem in
                     NavigationLink(destination: MyPointsView(speciesType: speciesItem.speciesType, collectionPath: speciesItem.collectionPath)) {
                         Text(speciesItem.speciesType)
                         .foregroundColor(.white)
                         .bold()
-                        .multilineTextAlignment(.center)
-                        .frame(width: 275.0, height: 30.0)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .padding()
                     }
                     .buttonStyle(.bordered)
                     .background(Color("MainColor"))
@@ -43,16 +42,13 @@ struct MyPointsListView: View {
                     .padding()
                     .listRowSeparator(.hidden)
                     .listRowBackground(Color("BackgroundColor"))
-                    .multilineTextAlignment(.center)
                 }
                 .listStyle(PlainListStyle())
                 .background(Color("BackgroundColor"))
                 .padding()
             }
             .background(Color("BackgroundColor"))
-        }
-        .background(Color("BackgroundColor"))
-        .navigationBarHidden(true)
+            .navigationBarHidden(true)
     }
 }
 

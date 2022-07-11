@@ -74,7 +74,6 @@ struct LoginView: View {
                     .padding()
                     .multilineTextAlignment(.center)
             }
-            .navigationBarTitleDisplayMode(.inline)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("BackgroundColor"))
     }

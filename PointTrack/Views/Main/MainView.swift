@@ -13,10 +13,21 @@ struct NewsPostRow: View {
     var body: some View {
         Link(destination: URL(string: "\(newsPost.link)")!) {
             HStack(alignment: .center) {
-                AsyncImage(
-                    url: URL(string: "\(newsPost.imageLink)")
-                )
-                .frame(width: 10, height: 10)
+                AsyncImage(url: URL(string: "\(newsPost.imageLink)")) { phase in
+                    switch phase {
+                    case .empty:
+                        Color.white.opacity(0.1)
+                    case .success(let image):
+                        image
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 50, height: 50)
+                    case .failure(_):
+                        Color.white.opacity(0.1)
+                    @unknown default:
+                        Color.white.opacity(0.1)
+                    }
+                }
                 
                 VStack(alignment: .trailing) {
                     Text("\(newsPost.title)")
@@ -98,9 +109,6 @@ struct MainView: View {
                 }
         }
         .accentColor(Color("MainColor"))
-        .onAppear() {
-            UITabBar.appearance().backgroundColor = .white
-        }
     }
 }
 

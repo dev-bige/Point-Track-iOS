@@ -20,7 +20,6 @@ struct SignUpView: View {
     @ObservedObject private var authViewModel = AuthViewModel()
         
     init() {
-        UITableView.appearance().contentInset.top = -35
         UITableView.appearance().backgroundColor = UIColor(Color("BackgroundColor"))
     }
     
@@ -131,7 +130,6 @@ struct SignUpView: View {
 //                .frame(maxWidth: .infinity)
 //                .listRowBackground(Color("BackgroundColor"))
         }
-        .navigationBarTitleDisplayMode(.inline)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("BackgroundColor"))
     }
