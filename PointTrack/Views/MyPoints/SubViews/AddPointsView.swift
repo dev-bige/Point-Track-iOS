@@ -13,6 +13,8 @@ struct AddPointsView: View {
     
     @EnvironmentObject var myPointsViewModel: MyPointsViewModel
     
+    @Environment(\.presentationMode) var presentation
+    
     @State private var points = ""
     @State private var state = ""
     
@@ -56,6 +58,7 @@ struct AddPointsView: View {
                     )
                     .keyboardType(.decimalPad)
                 }
+
                 
                 Section {
                     Button {
@@ -64,6 +67,10 @@ struct AddPointsView: View {
                                 .foregroundColor(Color.white)
                                 .onTapGesture {
                                     myPointsViewModel.addUserPoints(species: collectionPath, points: UserPoints(state: state, points: points))
+                                    
+                                    if !myPointsViewModel.addPointsError {
+                                        self.presentation.wrappedValue.dismiss()
+                                    }
                                 }
                     }
                         .buttonStyle(.bordered)

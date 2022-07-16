@@ -9,96 +9,72 @@ import SwiftUI
 
 struct EditPointsView: View {
     
+    @Environment(\.presentationMode) var presentation
+    
+    @StateObject var myPointsViewModel = MyPointsViewModel()
+    
     @Binding var userPoints: UserPoints
-    @Binding var speciesType: String
+    @Binding var species: String
     @Binding var collectionPath: String
     
-    @EnvironmentObject var myPointsViewModel: MyPointsViewModel
-    
-    init (speciesType: Binding<String>, collectionPath: Binding<String>, userPoints: Binding<UserPoints>) {
-        UITableView.appearance().backgroundColor = UIColor(Color("BackgroundColor"))
-        self._speciesType = speciesType
-        self._collectionPath = collectionPath
+    init (userPoints: Binding<UserPoints>, species: Binding<String>, collectionPath: Binding<String>) {
         self._userPoints = userPoints
+        self._species = species
+        self._collectionPath = collectionPath
     }
     
     var body: some View {
-        Text("Edit \(speciesType) Points for \(userPoints.state)?")
-            .font(.title)
-            .fontWeight(.bold)
-            .foregroundColor(Color("MainColor"))
-            .padding()
-        
-        Form {
-            Section(header:
-                        Text("Points:")
-                            .fontWeight(.bold)
-                            .foregroundColor(Color("MainColor"))
-            ) {
-                TextField(
-                    "Points",
-                    text: $userPoints.points
-                )
-                .keyboardType(.decimalPad)
-            }
+        VStack {
+            Text("Update Points?")
+                .font(.title)
+                .fontWeight(.bold)
+                .foregroundColor(Color("MainColor"))
+                .padding()
             
-            Section {
-                HStack {
-                    Button {
-                    } label: {
-                            Text("Delete")
-                                .foregroundColor(Color.white)
-                                .onTapGesture {
-                                    myPointsViewModel.deleteUserPoints(species: collectionPath, points: userPoints)
-                                }
-                    }
-                        .buttonStyle(.bordered)
-                        .cornerRadius(10)
-                        .background(.red)
-                        .padding()
-                    Spacer()
-                    Button {
-                    } label: {
-                            Text("Update")
-                                .foregroundColor(Color.white)
-                                .onTapGesture {
-                                    myPointsViewModel.updateUserPoints(species: collectionPath, points: userPoints)
-                                }
-                    }
-                        .buttonStyle(.bordered)
-                        .cornerRadius(10)
-                        .background(Color("MainColor"))
-                        .padding()
-                }
-            }
-            .frame(maxWidth: .infinity)
-            .multilineTextAlignment(.center)
-            .listRowBackground(Color("BackgroundColor"))
+            Text("Current points for " + species + " in " + userPoints.state + " are " + userPoints.points)
+                .foregroundColor(Color("MainColor"))
+                .lineLimit(nil)
+                .padding()
             
-            Section {
-                if (self.myPointsViewModel.updatePointsError) {
-                    Text(self.myPointsViewModel.updatePointsStatusMessage)
-                        .bold()
-                        .foregroundColor(.red)
-                        .lineLimit(nil)
-                } else {
-                    Text(self.myPointsViewModel.updatePointsStatusMessage)
-                        .bold()
-                        .foregroundColor(Color("MainColor"))
-                        .lineLimit(nil)
+            Form {
+                Section(header:
+                    Text("Points:")
+                    .fontWeight(.bold)
+                    .foregroundColor(Color("MainColor"))
+                ) {
+                    TextField(
+                        "Points",
+                        text: $userPoints.points
+                    )
+                    .keyboardType(.decimalPad)
                 }
                 
-                if (self.myPointsViewModel.deletePointsError) {
-                    Text(self.myPointsViewModel.deletePointsStatusMessage)
-                        .bold()
-                        .foregroundColor(.red)
-                        .lineLimit(nil)
+                Section {
+                    Button {
+                    } label: {
+                        Text("Update")
+                            .foregroundColor(Color.white)
+                            .onTapGesture {
+                                myPointsViewModel.updateUserPoints(species: collectionPath, points: userPoints)
+                                
+                                if !myPointsViewModel.updatePointsError {
+                                    self.presentation.wrappedValue.dismiss()
+                                }
+                            }
+                    }
+                    .buttonStyle(.bordered)
+                    .cornerRadius(10)
+                    .background(Color("MainColor"))
+                    .padding()
                 }
+                .buttonStyle(.bordered)
+                .cornerRadius(10)
+                .frame(maxWidth: .infinity)
+                .multilineTextAlignment(.center)
+                .listRowBackground(Color("BackgroundColor"))
             }
-            .frame(maxWidth: .infinity)
-            .multilineTextAlignment(.center)
-            .listRowBackground(Color("BackgroundColor"))
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("BackgroundColor"))
     }
 }
@@ -113,10 +89,7 @@ struct MyPointsRow: View {
     @EnvironmentObject var myPointsViewModel: MyPointsViewModel
 
     var body: some View {
-        
-        Button(action: {
-            showingAddingPointsPopover = true
-        }) {
+        NavigationLink(destination: EditPointsView(userPoints: $userPoint, species: $speciesType, collectionPath: $collectionPath)) {
             HStack {
                 Text(userPoint.state)
                     .foregroundColor(.white)
@@ -126,11 +99,10 @@ struct MyPointsRow: View {
                     .foregroundColor(.white)
                     .fontWeight(.bold)
             }
+            .padding()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .popover(isPresented: $showingAddingPointsPopover) {
-            EditPointsView(speciesType: $speciesType, collectionPath: $collectionPath, userPoints: $userPoint).environmentObject(myPointsViewModel)
-        }
-        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("MainColor"))
         .listRowSeparator(.hidden)
         .listRowBackground(Color("BackgroundColor"))
@@ -148,13 +120,18 @@ struct MyPointsView: View {
             VStack {
                 if myPointsViewModel.userPoints.isEmpty {
                     Text("No points, press the \"+\" to add your points")
+                        .foregroundColor(Color("MainColor"))
+                        .bold()
                 } else {
-                    List(myPointsViewModel.userPoints) { userPoints in
-                        MyPointsRow(userPoint: userPoints, speciesType: speciesType, collectionPath: collectionPath).environmentObject(myPointsViewModel)
+                    List {
+                        ForEach (myPointsViewModel.userPoints) { userPoints in
+                            MyPointsRow(userPoint: userPoints, speciesType: speciesType, collectionPath: collectionPath).environmentObject(myPointsViewModel)
+                        }
+                        .onDelete(perform: delete)
                     }
-                        .background(Color("BackgroundColor"))
-                        .listStyle(PlainListStyle())
-                        .padding(.bottom)
+                    .background(Color("BackgroundColor"))
+                    .listStyle(PlainListStyle())
+                    .padding(.bottom)
                 }
             }
             .padding(.top)
@@ -172,6 +149,16 @@ struct MyPointsView: View {
             .onAppear() {
                 self.myPointsViewModel.getUserPoints(species: collectionPath)
             }
+    }
+    
+    func delete(at offsets: IndexSet) {
+        let indexToDelte = offsets[offsets.startIndex]
+        
+        let pointsToDelete = myPointsViewModel.userPoints[indexToDelte]
+        
+        myPointsViewModel.deleteUserPoints(species: speciesType, points: pointsToDelete)
+        
+        myPointsViewModel.userPoints.remove(atOffsets: offsets)
     }
 }
 

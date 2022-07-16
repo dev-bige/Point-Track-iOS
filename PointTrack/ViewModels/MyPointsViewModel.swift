@@ -117,11 +117,13 @@ class MyPointsViewModel: ObservableObject {
     
     func deleteUserPoints(species: String, points: UserPoints) {
         
+        let speciesFormatted = species.lowercased().replacingOccurrences(of: " ", with: "_")
+        
         self.deletePointsStatusMessage = ""
         self.deletePointsError = false
         
         FirebaseManager.shared.firestore
-            .collection("\(species)_points")
+            .collection("\(speciesFormatted)_points")
             .document(FirebaseManager.shared.auth.currentUser!.uid)
             .updateData([points.state: FieldValue.delete(),]) { err in
                 if let err = err {
